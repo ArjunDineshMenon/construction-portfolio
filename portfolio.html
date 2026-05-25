@@ -153,6 +153,12 @@
             0% { transform: translateX(-100%); }
             100% { transform: translateX(100%); }
         }
+        
+        .nav-scrolled {
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom-color: rgba(212, 175, 55, 0.2);
+        }
     </style>
 </head>
 <body class="font-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container bg-black antialiased">
@@ -164,17 +170,20 @@
 </div>
 </div>
 <!-- NAV BAR -->
-<nav class="fixed top-0 left-0 w-full z-[100] bg-background/90 dark:bg-background/90 backdrop-blur-xl border-b border-outline-variant/30 transition-transform duration-500" id="top-nav">
-<div class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
-<a class="text-headline-md font-headline-md text-primary dark:text-primary tracking-widest uppercase hover:text-primary-fixed transition-colors duration-300" href="index.html">GOLDEN PEARL</a>
-<div class="hidden md:flex items-center gap-gutter text-label-caps font-label-caps">
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 pb-2" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 pb-2" href="services.html">Services</a>
-<a class="text-primary border-b-2 border-primary pb-2" href="portfolio.html">Portfolio</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 pb-2" href="#">About</a>
-<button class="ml-4 px-6 py-2 bg-primary text-on-primary-fixed font-bold text-label-caps hover:bg-primary-fixed transition-all active:scale-95">Contact Us</button>
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-unit h-[80px] bg-transparent backdrop-blur-none border-b border-transparent transition-all duration-300" id="main-nav">
+<a class="font-headline-md text-headline-md text-primary tracking-widest uppercase hover:text-primary-fixed transition-colors duration-300" href="index.html">GOLDEN PEARL</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-500 hover:scale-95" href="index.html">HOME</a>
+<a class="text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-500 hover:scale-95" href="services.html">SERVICES</a>
+<a class="text-primary border-b border-primary font-label-caps text-label-caps hover:text-primary transition-colors duration-500 hover:scale-95 pb-0.5" href="portfolio.html">PORTFOLIO</a>
+<a class="text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-500 hover:scale-95" href="#">ABOUT</a>
 </div>
+<div class="hidden md:block">
+<button class="bg-primary text-on-primary-fixed font-label-caps text-label-caps px-6 py-3 uppercase hover:bg-primary-fixed transition-colors">INQUIRE NOW</button>
 </div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
 </nav>
 <!-- HERO SECTION -->
 <section class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black" id="hero">
@@ -418,7 +427,7 @@
 
     // Parallax and Motion Effects
     const heroImg = document.getElementById('hero-parallax-img');
-    const nav = document.getElementById('top-nav');
+    const nav = document.getElementById('main-nav');
     let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
@@ -430,16 +439,10 @@
         }
 
         // Nav Scroll Effect
-        if (scrollY <= 0) {
-            nav.style.transform = 'translateY(0)';
-            nav.classList.remove('shadow-xl');
-            nav.style.background = 'rgba(19, 19, 19, 0.9)';
-        } else if (scrollY > lastScroll && scrollY > 100) {
-            nav.style.transform = 'translateY(-100%)';
-        } else if (scrollY < lastScroll) {
-            nav.style.transform = 'translateY(0)';
-            nav.classList.add('shadow-xl');
-            nav.style.background = 'rgba(19, 19, 19, 0.95)';
+        if (scrollY > 50) {
+            nav.classList.add('nav-scrolled');
+        } else {
+            nav.classList.remove('nav-scrolled');
         }
         
         lastScroll = scrollY;
