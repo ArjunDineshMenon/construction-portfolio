@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GOLDEN PEARL | The Landmark Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#241a00",
+                        "primary-container": "#d4af37",
+                        "surface-tint": "#e9c349",
+                        "on-primary": "#3c2f00",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-container-highest": "#353534",
+                        "surface-bright": "#3a3939",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed-variant": "#643f00",
+                        "tertiary-container": "#e6a753",
+                        "on-secondary": "#3a3000",
+                        "secondary-container": "#a79013",
+                        "tertiary-fixed": "#ffddb6",
+                        "error-container": "#93000a",
+                        "outline-variant": "#4d4635",
+                        "on-tertiary-container": "#623d00",
+                        "on-secondary-fixed": "#221b00",
+                        "secondary-fixed": "#fee263",
+                        "on-secondary-container": "#322900",
+                        "outline": "#99907c",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary": "#ffc479",
+                        "on-surface": "#e5e2e1",
+                        "on-primary-container": "#554300",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed-dim": "#e1c64a",
+                        "surface-container": "#201f1f",
+                        "secondary": "#e1c64a",
+                        "on-secondary-fixed-variant": "#534600",
+                        "inverse-primary": "#735c00",
+                        "surface-container-low": "#1c1b1b",
+                        "surface": "#131313",
+                        "primary": "#f2ca50",
+                        "on-tertiary": "#462a00",
+                        "on-primary-fixed-variant": "#574500",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffe088",
+                        "on-tertiary-fixed": "#2a1800",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#313030",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#fcba64",
+                        "background": "#131313",
+                        "surface-dim": "#131313",
+                        "on-background": "#e5e2e1",
+                        "surface-variant": "#353534"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "80px",
+                        "section-gap": "120px",
+                        "gutter": "32px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Montserrat"],
+                        "headline-md": ["Playfair Display"],
+                        "label-caps": ["Montserrat"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #000000; overflow-x: hidden; scroll-behavior: smooth; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        
+        /* Reveal Animation */
+        .reveal-up { transform: translateY(40px); opacity: 0; transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity; }
+        .reveal-up.active { transform: translateY(0); opacity: 1; }
+        
+        /* Gold Border Hover */
+        .gold-border-reveal { position: relative; overflow: hidden; }
+        .gold-border-reveal::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 0; height: 1px;
+            background: #d4af37;
+            transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gold-border-reveal:hover::after { width: 100%; }
+
+        /* Loader */
+        #loader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 9999; display: flex; align-items: center; justify-content: center;
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Parallax Container */
+        .parallax-bg {
+            transform: translateY(0);
+            will-change: transform;
+            transition: transform 0.1s linear;
+        }
+
+        /* Depth Layers */
+        .depth-layer-back { transform: translateZ(-1px) scale(2); }
+        .depth-layer-mid { transform: translateZ(-0.5px) scale(1.5); }
+        
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #d4af37; }
+
+        @keyframes loading {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container bg-black antialiased">
+<!-- LOADER -->
+<div class="flex-col" id="loader">
+<div class="text-display-lg font-display-lg text-primary tracking-widest animate-pulse">GOLDEN PEARL</div>
+<div class="mt-4 h-[1px] w-24 bg-primary-container/30 overflow-hidden">
+<div class="h-full bg-primary animate-[loading_2s_infinite]"></div>
+</div>
+</div>
+<!-- NAV BAR -->
+<nav class="fixed top-0 left-0 w-full z-[100] bg-background/90 dark:bg-background/90 backdrop-blur-xl border-b border-outline-variant/30 transition-transform duration-500" id="top-nav">
+<div class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+<a class="text-headline-md font-headline-md text-primary dark:text-primary tracking-widest uppercase hover:text-primary-fixed transition-colors duration-300" href="index.html">GOLDEN PEARL</a>
+<div class="hidden md:flex items-center gap-gutter text-label-caps font-label-caps">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 pb-2" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 pb-2" href="services.html">Services</a>
+<a class="text-primary border-b-2 border-primary pb-2" href="portfolio.html">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 pb-2" href="#">About</a>
+<button class="ml-4 px-6 py-2 bg-primary text-on-primary-fixed font-bold text-label-caps hover:bg-primary-fixed transition-all active:scale-95">Contact Us</button>
+</div>
+</div>
+</nav>
+<!-- HERO SECTION -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black" id="hero">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover scale-110 opacity-40 parallax-bg" data-alt="A cinematic, low-angle shot of a complex scaffolding structure reaching into a deep twilight sky. The silhouette of the metal grid is sharp and architectural, symbolizing the precision of construction. The lighting is high-contrast with subtle golden reflections on the steel, creating a prestigious and authoritative mood consistent with a luxury engineering brand." id="hero-parallax-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8IorE4d9FlGGBRY0M2llRfjK3uWCydPAWE0tHsrtaSqJ-sjjkgd8Qv6QQxanuBjXP1-of_QR9WQVCYX_bViiecyCw0Mr8y3GjMwdbf8f6V4at61-yEe3U7-8_Dg2kR7Epp_xkNPTuIHSAqSaQhDSd_UrEDGQzuZXjadT6aw4QTEMpAwBEJjK3gAv3nD18yf_Z3rSbxggZFD40EiHLX8DaXNp_bXnEc9WK6AogJyZaP7DFC9gKFiEPL6pthTMaBXOav-MhJnY40uw"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-0 max-w-4xl mx-auto fade-in-up">
+<span class="text-label-caps font-label-caps text-primary mb-4 block tracking-[0.3em] uppercase reveal-up">Established Excellence</span>
+<h1 class="text-display-lg font-display-lg text-on-background mb-8 leading-tight reveal-up text-white" style="transition-delay: 200ms;">THE LANDMARK<br/><span class="italic text-primary">PORTFOLIO</span></h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12 reveal-up" style="transition-delay: 400ms;">
+            An architectural journey through Bahrain's most prestigious civil, industrial, and luxury interior developments. Where precision meets permanence.
+        </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center reveal-up animate-bounce" style="transition-delay: 600ms;">
+<button class="group flex items-center gap-2 text-label-caps font-label-caps text-on-background border-b border-primary pb-2 hover:text-primary transition-colors">
+                Explore Our Legacy <span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">arrow_downward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 1: CIVIL & INDUSTRIAL -->
+<section class="relative py-section-gap px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<div class="md:col-span-4 sticky top-40 reveal-up">
+<h2 class="text-label-caps font-label-caps text-primary mb-2 tracking-[0.2em] uppercase">Sector I</h2>
+<h3 class="text-headline-lg font-headline-lg text-on-background mb-8 leading-tight">Civil &amp; Industrial<br/>Excellence</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-12">
+            Engineering foundations that sustain national progress. From heavy industrial installations to complex plant room constructions.
+        </p>
+<div class="relative w-full aspect-[4/5] overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A high-contrast industrial interior featuring massive steel machinery and intricate pipework in a pristine facility. The lighting is focused, casting long shadows and highlighting the brushed metal textures. The aesthetic is modern and industrial, dominated by shades of charcoal and silver with warm golden highlights from safety beacons, projecting stability and engineering mastery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApKwbmbqYP-BK5fNztBF5LQTob70-z67SeCrgfo-FuA8UxSjkdijVEaWe-qwp8fuRXiwwoGrZ5lZB8P6wRmA5P0K7YwVItcwrI8AzCBz0RzHP-bP-LdIdijoWa1WRdJqQynMPhx9KNQEs0-Lg9HLbtxczqdHVlN8htEtIab7AdSuW0rvCsuZDlWBnI38ciRNdDlgJJYvFcnXtJvW8ZJgMQxua_FUH8_N1nVMtcMq3tcA2PSlK157FOiDItjTTF3TWDvw9dm6GpjEE"/>
+</div>
+</div>
+<div class="md:col-span-7 md:col-start-6 space-y-32">
+<!-- Project List Item -->
+<div class="reveal-up border-l border-outline-variant/30 pl-8 space-y-6">
+<h4 class="text-headline-md font-headline-md text-primary">Midal Cables Co. BSC (C)</h4>
+<ul class="space-y-4 text-body-lg font-body-lg text-on-background/80">
+<li class="gold-border-reveal flex justify-between items-end pb-2"><span>RO Plant Room Construction</span><span class="text-label-caps text-primary/40">2023</span></li>
+<li class="gold-border-reveal flex justify-between items-end pb-2"><span>Cable Rewinding Machines Installations</span><span class="text-label-caps text-primary/40">2022</span></li>
+<li class="gold-border-reveal flex justify-between items-end pb-2"><span>Drum Shop &amp; Machine Installations</span><span class="text-label-caps text-primary/40">2022</span></li>
+<li class="gold-border-reveal flex justify-between items-end pb-2"><span>Main Gate Security Complex</span><span class="text-label-caps text-primary/40">2021</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="glass-card p-8 flex flex-col justify-between aspect-square reveal-up">
+<span class="text-label-caps text-primary">Heavy Industry</span>
+<h5 class="text-headline-md font-headline-md">Alba Potline 6 Offices</h5>
+<p class="text-body-md text-on-surface-variant">Complete administrative infrastructure and specialized furniture fitouts.</p>
+</div>
+<div class="bg-primary/5 border border-primary/20 p-8 flex flex-col justify-between aspect-square transition-all hover:bg-primary/10 reveal-up" style="transition-delay: 200ms;">
+<span class="text-label-caps text-primary">Strategic Logistics</span>
+<h5 class="text-headline-md font-headline-md">Al Shaya Warehouse</h5>
+<p class="text-body-md text-on-surface-variant">Full steel structural works and heavy-duty HVAC installations at Askar.</p>
+</div>
+</div>
+<div class="reveal-up border-l border-outline-variant/30 pl-8 space-y-6">
+<h4 class="text-headline-md font-headline-md text-primary">Infrastructure Portfolio</h4>
+<ul class="space-y-4 text-body-lg font-body-lg text-on-background/80">
+<li class="gold-border-reveal flex justify-between items-end pb-2"><span>Universal Rolling Mill, Hidd</span><span class="text-label-caps text-primary/40">MEP &amp; Civil</span></li>
+<li class="gold-border-reveal flex justify-between items-end pb-2"><span>BRC Weldmesh HQ</span><span class="text-label-caps text-primary/40">Fit-out</span></li>
+<li class="gold-border-reveal flex justify-between items-end pb-2"><span>3 Storey Building, Janabia</span><span class="text-label-caps text-primary/40">Civil Works</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECTION 2: LUXURY INTERIOR FITOUTS -->
+<section class="relative bg-surface-container-lowest py-section-gap overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<div class="max-w-2xl reveal-up">
+<h2 class="text-label-caps font-label-caps text-primary mb-2 tracking-[0.2em] uppercase">Sector II</h2>
+<h3 class="text-headline-lg font-headline-lg text-on-background leading-tight">Luxury Interior<br/>Fitouts</h3>
+</div>
+<div class="md:w-1/3 reveal-up" style="transition-delay: 200ms;">
+<p class="text-body-md font-body-md text-on-surface-variant">
+                    Meticulous attention to detail in residential and commercial spaces. We transform structural shells into bespoke sanctuaries of luxury and productivity.
+                </p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Project Card -->
+<div class="group relative aspect-[3/4] overflow-hidden reveal-up">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A luxurious modern living room with floor-to-ceiling windows overlooking a sunset city skyline. The interior features gold-trimmed furniture, dark velvet upholstery, and a minimalist marble fireplace. The lighting is warm and indirect, creating a sophisticated 'Obsidian and Gold' atmosphere typical of high-end real estate fit-outs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnQMXVa-_L7FjXMzNlBkTxdGIdmiWkq7g89H4XABraiCi2My4tXArQPigjgro2c_AG2EbO9_kbkTgReivKdXhKS7kVBXzcbhTaQYz98iNuyAZAK8yFdQrJ7cV35xnw-rGXCPY-ugJNVvafv1VGYkkGckWAvXwvq7tF7NArl0DYMret9pcF-EpUfAGKER5HcSqJRw6uK8bp4tJP31l9Zb-FrlWLp3I0s1jAFNo1xsVjTjh6Co8jXG54J2PL39C6W-kkd_mfhM6ZaA"/>
+<div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="text-label-caps text-primary mb-2">Residential</span>
+<h4 class="text-headline-md font-headline-md text-white">15 Villas at SAR</h4>
+<p class="text-body-md text-on-surface-variant mt-2 opacity-0 group-hover:opacity-100 transition-opacity delay-200">Complete gypsum ceiling, interior, and exterior painting for a premium residential complex.</p>
+</div>
+</div>
+<div class="group relative aspect-[3/4] overflow-hidden reveal-up" style="transition-delay: 200ms;">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A sleek corporate boardroom with a monolithic wooden table and ergonomic designer chairs. The room features architectural lighting integrated into the ceiling and dark paneled walls. The space is vast and professional, embodying the corporate authority of a headquarters fit-out project." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLpG0IO5Owkx7zmvXAmuB3bBhrELh0MEm1zacMhwwx82RX1E-Q0Wlse9aP4tjyv2aVuYAq-sZI0ThsISXmp70AjE2QndV8jwknHfWp7nl91OZfGRN7eaCrqKLT6ZikUCEmkSw1W0VzVwbn6N6eYftWQTvjyv-ML1E-97PfV2EGlUyit1AGDa5gvAQLEfCZSfabkB7QPzhtVImj60AFeTW44oUZie0UMn7gZMxd-6-gmhy4SwYod94fzeuBRJ2ubPxjMyloH2P_yBY"/>
+<div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="text-label-caps text-primary mb-2">Commercial HQ</span>
+<h4 class="text-headline-md font-headline-md text-white">Al Zamil Group HQ</h4>
+<p class="text-body-md text-on-surface-variant mt-2 opacity-0 group-hover:opacity-100 transition-opacity delay-200">Signature headquarters fit-out at the prestigious Manama location.</p>
+</div>
+</div>
+<div class="group relative aspect-[3/4] overflow-hidden reveal-up" style="transition-delay: 400ms;">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A stunning modern kitchen with a large marble island and integrated gold hardware. The cabinetry is dark charcoal with subtle lighting accents. The overall aesthetic is one of clean lines, expensive materials, and architectural precision, showcasing high-fidelity interior design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_33a1gB9SqR4gZgG0Qwo_GdQT-S7ylfNLVJnJgFu7tLzhDLspTzR47bQmOzUnHdESz_RVRQDeI6I35mo9dlM51vQHuGiWQ-jnvWFSi5XXR0MfIypOC70SBOgrZhkwAG5YAv5sotEWRsiYZLAV8ZdAMZBC1dJzOdLnVV5erYidsIoNx6UmWQ7Eu6ZcxtFkoNs_thwDmBLhjZc2724nqFO_0lT3ouay13vI8eHx6x-wON-yGT3msVjeAiYh4B-XehrYJ1VS_iYYvI8"/>
+<div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="text-label-caps text-primary mb-2">Waterfront Living</span>
+<h4 class="text-headline-md font-headline-md text-white">Marassi Shores</h4>
+<p class="text-body-md text-on-surface-variant mt-2 opacity-0 group-hover:opacity-100 transition-opacity delay-200">Complete Corian top works, bespoke vanity units, and luxury bathroom cladding.</p>
+</div>
+</div>
+</div>
+<div class="mt-section-gap grid grid-cols-1 md:grid-cols-2 gap-margin-desktop">
+<div class="reveal-up border-t border-outline-variant/30 pt-12">
+<h4 class="text-headline-md font-headline-md text-primary mb-8">Selected Projects</h4>
+<div class="space-y-6">
+<div class="flex items-center gap-4 group cursor-pointer reveal-up" style="transition-delay: 100ms;">
+<div class="w-2 h-2 rounded-full bg-primary-container transition-transform group-hover:scale-150 group-hover:shadow-[0_0_10px_#d4af37]"></div>
+<span class="text-body-lg font-body-lg group-hover:translate-x-2 transition-transform">Royal Bahrain Hospital, Janabia</span>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer reveal-up" style="transition-delay: 200ms;">
+<div class="w-2 h-2 rounded-full bg-primary-container transition-transform group-hover:scale-150 group-hover:shadow-[0_0_10px_#d4af37]"></div>
+<span class="text-body-lg font-body-lg group-hover:translate-x-2 transition-transform">Hamza Law Office, Al Zamil Tower</span>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer reveal-up" style="transition-delay: 300ms;">
+<div class="w-2 h-2 rounded-full bg-primary-container transition-transform group-hover:scale-150 group-hover:shadow-[0_0_10px_#d4af37]"></div>
+<span class="text-body-lg font-body-lg group-hover:translate-x-2 transition-transform">Fontana Tower Apartment Furnishings</span>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer reveal-up" style="transition-delay: 400ms;">
+<div class="w-2 h-2 rounded-full bg-primary-container transition-transform group-hover:scale-150 group-hover:shadow-[0_0_10px_#d4af37]"></div>
+<span class="text-body-lg font-body-lg group-hover:translate-x-2 transition-transform">Ministry of Justice Hall, Manama</span>
+</div>
+</div>
+</div>
+<div class="reveal-up glass-card p-12 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-[64px] text-primary mb-6 transition-transform hover:rotate-12 duration-500" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<h4 class="text-headline-md font-headline-md mb-4">Uncompromising Standards</h4>
+<p class="text-body-md text-on-surface-variant max-w-sm">Every millimeter is measured, every material selected for its longevity and aesthetic prestige.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: SIGNATURE RESTAURANTS -->
+<section class="relative py-section-gap px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-24 text-center reveal-up">
+<h2 class="text-label-caps font-label-caps text-primary mb-2 tracking-[0.2em] uppercase">Sector III</h2>
+<h3 class="text-headline-lg font-headline-lg text-on-background">Signature Restaurant Construction</h3>
+<div class="w-24 h-1 bg-primary mx-auto mt-8 transition-all duration-1000 group-active:w-48"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+<!-- Bento Layout for Restaurants -->
+<div class="md:col-span-8 bg-surface-container p-12 reveal-up relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-1000" data-alt="A trendy upscale cafe interior with industrial-chic elements. Exposed brick walls, hanging Edison bulbs, and minimalist wooden tables create a warm, inviting atmosphere. The space is filled with green indoor plants and features a large glass display for pastries. The lighting is soft and golden, projecting a modern retail and hospitality vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKQJZs_hmCQ0xL5TEMXN51YGrORMkfOnGqJU42Ge_5MlkxbxHtq3Z0OQFLKVZF2zV8EPiFIhu-n2j7kr5p8lFIQ63tG2oq-9Ez4_2fF0EShjjhfUeEgT1mNOewPnT9AzQDvR1u1q6oOOhQWaQVyDevTw-P0kVx6nLcXTou-zFzQpcwauqlG3Vg2x2iia6Nqc5oSTn4erVw_-nG8f6JXQplO9zNZ2u6s--DOicCmaXmM39uU29NziElxNjFd4PE3k7X7uqHGdszrIY"/>
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div>
+<h4 class="text-headline-md font-headline-md text-primary mb-4">Loop Café Concept</h4>
+<p class="text-body-lg text-on-background/80 max-w-lg mb-8">
+                        Complete construction and interior fit-out for Loop Café at multiple strategic locations across the Kingdom.
+                    </p>
+<div class="flex gap-4 flex-wrap">
+<span class="px-4 py-1 border border-primary/30 text-label-caps text-primary rounded-full hover:bg-primary hover:text-on-primary transition-colors cursor-default">Aali</span>
+<span class="px-4 py-1 border border-primary/30 text-label-caps text-primary rounded-full hover:bg-primary hover:text-on-primary transition-colors cursor-default">Diyar Al Muharraq</span>
+<span class="px-4 py-1 border border-primary/30 text-label-caps text-primary rounded-full hover:bg-primary hover:text-on-primary transition-colors cursor-default">NBB Manama</span>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 bg-primary text-on-primary-fixed p-12 reveal-up transition-transform hover:scale-[1.02] duration-500" style="transition-delay: 200ms;">
+<h4 class="text-headline-md font-headline-md mb-6">WOK Station</h4>
+<p class="text-body-md mb-8">Multi-branch rollout at Galaria Mall, Seef, and Platinum Tower. Fast-track construction with high-specification commercial kitchens.</p>
+<div class="h-1 bg-on-primary-fixed/30 w-full overflow-hidden">
+<div class="h-full bg-on-primary-fixed w-1/2 group-hover:w-full transition-all duration-700"></div>
+</div>
+<div class="mt-8 flex justify-between items-center">
+<span class="text-label-caps font-bold">480 sqm total</span>
+<span class="material-symbols-outlined transition-transform group-hover:rotate-45">restaurant</span>
+</div>
+</div>
+<div class="md:col-span-4 glass-card p-12 reveal-up" style="transition-delay: 100ms;">
+<h4 class="text-headline-md font-headline-md text-primary mb-4">Godiva Chocolate</h4>
+<p class="text-body-md text-on-surface-variant">Luxury retail outlet construction at Al A'ali Mall, emphasizing premium finishes and climate-controlled display areas.</p>
+</div>
+<div class="md:col-span-4 border border-outline-variant/30 p-12 reveal-up bg-surface-container-low transition-all hover:bg-surface-container" style="transition-delay: 300ms;">
+<h4 class="text-headline-md font-headline-md text-on-background mb-4">Florist Daughter</h4>
+<p class="text-body-md text-on-surface-variant">Bespoke florist and restaurant fusion space at Al A'ali Mall. Complex MEP for integrated plant life.</p>
+</div>
+<div class="md:col-span-4 bg-surface-container-high p-12 reveal-up transition-all hover:bg-surface-bright" style="transition-delay: 500ms;">
+<h4 class="text-headline-md font-headline-md text-on-background mb-4">Kasbah Restaurant</h4>
+<p class="text-body-md text-on-surface-variant">Traditional Moroccan influence met with modern architectural execution at Platinum Tower, Seef District.</p>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-section-gap max-w-container-max mx-auto gap-8 reveal-up">
+<div class="flex flex-col items-center md:items-start">
+<div class="text-headline-md font-headline-md text-primary mb-4 uppercase">GOLDEN PEARL</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-sm text-center md:text-left">
+                Excellence in construction and trading across the Kingdom of Bahrain since 2012.
+            </p>
+</div>
+<div class="flex gap-gutter text-label-caps font-label-caps flex-wrap justify-center">
+<a class="text-on-surface-variant hover:text-primary underline decoration-transparent hover:decoration-primary transition-all duration-300" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline decoration-transparent hover:decoration-primary transition-all duration-300" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary underline decoration-transparent hover:decoration-primary transition-all duration-300" href="#">Careers</a>
+<a class="text-on-surface-variant hover:text-primary underline decoration-transparent hover:decoration-primary transition-all duration-300" href="#">Locations</a>
+</div>
+<div class="text-label-caps font-label-caps text-on-surface-variant text-center md:text-right">
+            © 2024 GOLDEN PEARL CONSTRUCTION &amp; TRADING. ALL RIGHTS RESERVED.
+        </div>
+</div>
+</footer>
+<script>
+    // Loader removal
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        loader.style.transition = 'opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+            initReveal();
+        }, 1200);
+    });
+
+    // Intersection Observer for Reveal
+    function initReveal() {
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -10% 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Stagger child elements if they exist
+                    const children = entry.target.querySelectorAll('.reveal-child');
+                    children.forEach((child, i) => {
+                        setTimeout(() => child.classList.add('active'), i * 150);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    }
+
+    // Parallax and Motion Effects
+    const heroImg = document.getElementById('hero-parallax-img');
+    const nav = document.getElementById('top-nav');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.pageYOffset;
+        
+        // Hero Parallax
+        if (scrollY < window.innerHeight) {
+            heroImg.style.transform = `translateY(${scrollY * 0.4}px) scale(1.1)`;
+        }
+
+        // Nav Scroll Effect
+        if (scrollY <= 0) {
+            nav.style.transform = 'translateY(0)';
+            nav.classList.remove('shadow-xl');
+            nav.style.background = 'rgba(19, 19, 19, 0.9)';
+        } else if (scrollY > lastScroll && scrollY > 100) {
+            nav.style.transform = 'translateY(-100%)';
+        } else if (scrollY < lastScroll) {
+            nav.style.transform = 'translateY(0)';
+            nav.classList.add('shadow-xl');
+            nav.style.background = 'rgba(19, 19, 19, 0.95)';
+        }
+        
+        lastScroll = scrollY;
+    });
+
+    // Smooth subtle mouse interaction for depth
+    document.addEventListener('mousemove', (e) => {
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.005;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.005;
+        
+        document.querySelectorAll('.glass-card').forEach(el => {
+            if (el.matches(':hover')) {
+                el.style.transform = `translateY(-8px) rotateX(${-moveY * 2}deg) rotateY(${moveX * 2}deg)`;
+            }
+        });
+    });
+</script>
+</body></html>
