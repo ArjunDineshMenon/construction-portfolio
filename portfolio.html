@@ -1,464 +1,555 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
+<html lang="en" class="dark">
+<head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GOLDEN PEARL | The Landmark Portfolio</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-primary-fixed": "#241a00",
-                        "primary-container": "#d4af37",
-                        "surface-tint": "#e9c349",
-                        "on-primary": "#3c2f00",
-                        "on-surface-variant": "#d0c5af",
-                        "surface-container-highest": "#353534",
-                        "surface-bright": "#3a3939",
-                        "surface-container-high": "#2a2a2a",
-                        "on-tertiary-fixed-variant": "#643f00",
-                        "tertiary-container": "#e6a753",
-                        "on-secondary": "#3a3000",
-                        "secondary-container": "#a79013",
-                        "tertiary-fixed": "#ffddb6",
-                        "error-container": "#93000a",
-                        "outline-variant": "#4d4635",
-                        "on-tertiary-container": "#623d00",
-                        "on-secondary-fixed": "#221b00",
-                        "secondary-fixed": "#fee263",
-                        "on-secondary-container": "#322900",
-                        "outline": "#99907c",
-                        "inverse-surface": "#e5e2e1",
-                        "tertiary": "#ffc479",
-                        "on-surface": "#e5e2e1",
-                        "on-primary-container": "#554300",
-                        "surface-container-lowest": "#0e0e0e",
-                        "secondary-fixed-dim": "#e1c64a",
-                        "surface-container": "#201f1f",
-                        "secondary": "#e1c64a",
-                        "on-secondary-fixed-variant": "#534600",
-                        "inverse-primary": "#735c00",
-                        "surface-container-low": "#1c1b1b",
-                        "surface": "#131313",
-                        "primary": "#f2ca50",
-                        "on-tertiary": "#462a00",
-                        "on-primary-fixed-variant": "#574500",
-                        "primary-fixed-dim": "#e9c349",
-                        "on-error": "#690005",
-                        "primary-fixed": "#ffe088",
-                        "on-tertiary-fixed": "#2a1800",
-                        "on-error-container": "#ffdad6",
-                        "inverse-on-surface": "#313030",
-                        "error": "#ffb4ab",
-                        "tertiary-fixed-dim": "#fcba64",
-                        "background": "#131313",
-                        "surface-dim": "#131313",
-                        "on-background": "#e5e2e1",
-                        "surface-variant": "#353534"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "unit": "8px",
-                        "margin-desktop": "80px",
-                        "section-gap": "120px",
-                        "gutter": "32px",
-                        "margin-mobile": "24px",
-                        "container-max": "1440px"
-                    },
-                    "fontFamily": {
-                        "body-lg": ["Montserrat"],
-                        "headline-md": ["Playfair Display"],
-                        "label-caps": ["Montserrat"],
-                        "headline-lg": ["Playfair Display"],
-                        "headline-lg-mobile": ["Playfair Display"],
-                        "display-lg": ["Playfair Display"],
-                        "body-md": ["Montserrat"]
-                    },
-                    "fontSize": {
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}],
-                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
-                    }
-                },
-            },
-        }
-    </script>
-<style>
-        body { background-color: #000000; overflow-x: hidden; scroll-behavior: smooth; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-        
-        /* Reveal Animation */
-        .reveal-up { transform: translateY(40px); opacity: 0; transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity; }
-        .reveal-up.active { transform: translateY(0); opacity: 1; }
-        
-        /* Gold Border Hover */
-        .gold-border-reveal { position: relative; overflow: hidden; }
-        .gold-border-reveal::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; width: 0; height: 1px;
-            background: #d4af37;
-            transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .gold-border-reveal:hover::after { width: 100%; }
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Portfolio | 24 Projects Across Bahrain | Golden Pearl Trading &amp; Contracting</title>
+<meta name="description" content="Twenty-four delivered works for Midal Cables, Alba, Al Zamil Group, Marassi Shores, the Ministry of Justice, Godiva, Loop Caf&eacute; and more, across civil, industrial, fit-out and retail work in Bahrain."/>
+<link rel="canonical" href="https://arjundineshmenon.github.io/construction-portfolio/portfolio.html"/>
 
-        /* Loader */
-        #loader {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #000; z-index: 9999; display: flex; align-items: center; justify-content: center;
-        }
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Golden Pearl Trading &amp; Contracting"/>
+<meta property="og:title" content="Portfolio | Golden Pearl Trading &amp; Contracting"/>
+<meta property="og:description" content="Twenty-four delivered works across civil, industrial, interior fit-out and retail work in the Kingdom of Bahrain."/>
+<meta property="og:image" content="https://arjundineshmenon.github.io/construction-portfolio/images/portfolio-hero.webp"/>
+<meta property="og:url" content="https://arjundineshmenon.github.io/construction-portfolio/portfolio.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
 
-        /* Glass Card */
-        .glass-card {
-            background: rgba(26, 26, 26, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-        }
-        .glass-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.2);
-        }
+<link rel="icon" href="favicon.png" sizes="180x180"/>
+<link rel="apple-touch-icon" href="favicon.png"/>
+<meta name="theme-color" content="#0a0a0a"/>
 
-        /* Parallax Container */
-        .parallax-bg {
-            transform: translateY(0);
-            will-change: transform;
-            transition: transform 0.1s linear;
-        }
+<script>document.documentElement.classList.add('js');</script>
 
-        /* Depth Layers */
-        .depth-layer-back { transform: translateZ(-1px) scale(2); }
-        .depth-layer-mid { transform: translateZ(-0.5px) scale(1.5); }
-        
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: #d4af37; }
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;icon_names=call,close,mail,menu" rel="stylesheet"/>
 
-        @keyframes loading {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        .nav-scrolled {
-            background-color: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom-color: rgba(212, 175, 55, 0.2);
-        }
-    </style>
-</head>
-<body class="font-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container bg-black antialiased">
-<!-- LOADER -->
-<div class="flex-col" id="loader">
-<div class="text-display-lg font-display-lg text-primary tracking-widest animate-pulse">GOLDEN PEARL</div>
-<div class="mt-4 h-[1px] w-24 bg-primary-container/30 overflow-hidden">
-<div class="h-full bg-primary animate-[loading_2s_infinite]"></div>
-</div>
-</div>
-<!-- NAV BAR -->
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-unit h-[80px] bg-transparent backdrop-blur-none border-b border-transparent transition-all duration-300" id="main-nav">
-<a class="font-headline-md text-headline-md text-primary tracking-widest uppercase hover:text-primary-fixed transition-colors duration-300" href="index.html">GOLDEN PEARL</a>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-500 hover:scale-95" href="index.html">HOME</a>
-<a class="text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-500 hover:scale-95" href="services.html">SERVICES</a>
-<a class="text-primary border-b border-primary font-label-caps text-label-caps hover:text-primary transition-colors duration-500 hover:scale-95 pb-0.5" href="portfolio.html">PORTFOLIO</a>
-<a class="text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-500 hover:scale-95" href="about.html">ABOUT</a>
-</div>
-<div class="hidden md:block">
-<button class="open-inquiry-modal bg-primary text-on-primary-fixed font-label-caps text-label-caps px-6 py-3 uppercase hover:bg-primary-fixed transition-colors">INQUIRE NOW</button>
-</div>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</nav>
-<!-- HERO SECTION -->
-<section class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black" id="hero">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover scale-110 opacity-40 parallax-bg" data-alt="A cinematic, low-angle shot of a complex scaffolding structure reaching into a deep twilight sky. The silhouette of the metal grid is sharp and architectural, symbolizing the precision of construction. The lighting is high-contrast with subtle golden reflections on the steel, creating a prestigious and authoritative mood consistent with a luxury engineering brand." id="hero-parallax-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8IorE4d9FlGGBRY0M2llRfjK3uWCydPAWE0tHsrtaSqJ-sjjkgd8Qv6QQxanuBjXP1-of_QR9WQVCYX_bViiecyCw0Mr8y3GjMwdbf8f6V4at61-yEe3U7-8_Dg2kR7Epp_xkNPTuIHSAqSaQhDSd_UrEDGQzuZXjadT6aw4QTEMpAwBEJjK3gAv3nD18yf_Z3rSbxggZFD40EiHLX8DaXNp_bXnEc9WK6AogJyZaP7DFC9gKFiEPL6pthTMaBXOav-MhJnY40uw"/>
-<div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
-</div>
-<div class="relative z-10 text-center px-margin-mobile md:px-0 max-w-4xl mx-auto fade-in-up">
-<span class="text-label-caps font-label-caps text-primary mb-4 block tracking-[0.3em] uppercase reveal-up">Established Excellence</span>
-<h1 class="text-display-lg font-display-lg text-on-background mb-8 leading-tight reveal-up text-white" style="transition-delay: 200ms;">THE LANDMARK<br/><span class="italic text-primary">PORTFOLIO</span></h1>
-<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12 reveal-up" style="transition-delay: 400ms;">
-            An architectural journey through Bahrain's most prestigious civil, industrial, and luxury interior developments. Where precision meets permanence.
-        </p>
-<div class="flex flex-col md:flex-row gap-6 justify-center items-center reveal-up animate-bounce" style="transition-delay: 600ms;">
-<button class="group flex items-center gap-2 text-label-caps font-label-caps text-on-background border-b border-primary pb-2 hover:text-primary transition-colors">
-                Explore Our Legacy <span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">arrow_downward</span>
-</button>
-</div>
-</div>
-</section>
-<!-- SECTION 1: CIVIL & INDUSTRIAL -->
-<section class="relative py-section-gap px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
-<div class="md:col-span-4 sticky top-40 reveal-up">
-<h2 class="text-label-caps font-label-caps text-primary mb-2 tracking-[0.2em] uppercase">Sector I</h2>
-<h3 class="text-headline-lg font-headline-lg text-on-background mb-8 leading-tight">Civil &amp; Industrial<br/>Excellence</h3>
-<p class="text-body-md font-body-md text-on-surface-variant mb-12">
-            Engineering foundations that sustain national progress. From heavy industrial installations to complex plant room constructions.
-        </p>
-<div class="relative w-full aspect-[4/5] overflow-hidden group">
-<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A high-contrast industrial interior featuring massive steel machinery and intricate pipework in a pristine facility. The lighting is focused, casting long shadows and highlighting the brushed metal textures. The aesthetic is modern and industrial, dominated by shades of charcoal and silver with warm golden highlights from safety beacons, projecting stability and engineering mastery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApKwbmbqYP-BK5fNztBF5LQTob70-z67SeCrgfo-FuA8UxSjkdijVEaWe-qwp8fuRXiwwoGrZ5lZB8P6wRmA5P0K7YwVItcwrI8AzCBz0RzHP-bP-LdIdijoWa1WRdJqQynMPhx9KNQEs0-Lg9HLbtxczqdHVlN8htEtIab7AdSuW0rvCsuZDlWBnI38ciRNdDlgJJYvFcnXtJvW8ZJgMQxua_FUH8_N1nVMtcMq3tcA2PSlK157FOiDItjTTF3TWDvw9dm6GpjEE"/>
-</div>
-</div>
-<div class="md:col-span-7 md:col-start-6 space-y-32">
-<!-- Project List Item -->
-<div class="reveal-up border-l border-outline-variant/30 pl-8 space-y-6">
-<h4 class="text-headline-md font-headline-md text-primary">Midal Cables Co. BSC (C)</h4>
-<ul class="space-y-4 text-body-lg font-body-lg text-on-background/80">
-<li class="gold-border-reveal flex justify-between items-end pb-2"><span>RO Plant Room Construction</span><span class="text-label-caps text-primary/40">2023</span></li>
-<li class="gold-border-reveal flex justify-between items-end pb-2"><span>Cable Rewinding Machines Installations</span><span class="text-label-caps text-primary/40">2022</span></li>
-<li class="gold-border-reveal flex justify-between items-end pb-2"><span>Drum Shop &amp; Machine Installations</span><span class="text-label-caps text-primary/40">2022</span></li>
-<li class="gold-border-reveal flex justify-between items-end pb-2"><span>Main Gate Security Complex</span><span class="text-label-caps text-primary/40">2021</span></li>
-</ul>
-</div>
-<div class="grid grid-cols-2 gap-gutter">
-<div class="glass-card p-8 flex flex-col justify-between aspect-square reveal-up">
-<span class="text-label-caps text-primary">Heavy Industry</span>
-<h5 class="text-headline-md font-headline-md">Alba Potline 6 Offices</h5>
-<p class="text-body-md text-on-surface-variant">Complete administrative infrastructure and specialized furniture fitouts.</p>
-</div>
-<div class="bg-primary/5 border border-primary/20 p-8 flex flex-col justify-between aspect-square transition-all hover:bg-primary/10 reveal-up" style="transition-delay: 200ms;">
-<span class="text-label-caps text-primary">Strategic Logistics</span>
-<h5 class="text-headline-md font-headline-md">Al Shaya Warehouse</h5>
-<p class="text-body-md text-on-surface-variant">Full steel structural works and heavy-duty HVAC installations at Askar.</p>
-</div>
-</div>
-<div class="reveal-up border-l border-outline-variant/30 pl-8 space-y-6">
-<h4 class="text-headline-md font-headline-md text-primary">Infrastructure Portfolio</h4>
-<ul class="space-y-4 text-body-lg font-body-lg text-on-background/80">
-<li class="gold-border-reveal flex justify-between items-end pb-2"><span>Universal Rolling Mill, Hidd</span><span class="text-label-caps text-primary/40">MEP &amp; Civil</span></li>
-<li class="gold-border-reveal flex justify-between items-end pb-2"><span>BRC Weldmesh HQ</span><span class="text-label-caps text-primary/40">Fit-out</span></li>
-<li class="gold-border-reveal flex justify-between items-end pb-2"><span>3 Storey Building, Janabia</span><span class="text-label-caps text-primary/40">Civil Works</span></li>
-</ul>
-</div>
-</div>
-</section>
-<!-- SECTION 2: LUXURY INTERIOR FITOUTS -->
-<section class="relative bg-surface-container-lowest py-section-gap overflow-hidden">
-<div class="max-w-container-max mx-auto px-margin-desktop">
-<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
-<div class="max-w-2xl reveal-up">
-<h2 class="text-label-caps font-label-caps text-primary mb-2 tracking-[0.2em] uppercase">Sector II</h2>
-<h3 class="text-headline-lg font-headline-lg text-on-background leading-tight">Luxury Interior<br/>Fitouts</h3>
-</div>
-<div class="md:w-1/3 reveal-up" style="transition-delay: 200ms;">
-<p class="text-body-md font-body-md text-on-surface-variant">
-                    Meticulous attention to detail in residential and commercial spaces. We transform structural shells into bespoke sanctuaries of luxury and productivity.
-                </p>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Project Card -->
-<div class="group relative aspect-[3/4] overflow-hidden reveal-up">
-<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A luxurious modern living room with floor-to-ceiling windows overlooking a sunset city skyline. The interior features gold-trimmed furniture, dark velvet upholstery, and a minimalist marble fireplace. The lighting is warm and indirect, creating a sophisticated 'Obsidian and Gold' atmosphere typical of high-end real estate fit-outs." src="images/luxury_living_room.png"/>
-<div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform">
-<span class="text-label-caps text-primary mb-2">Residential</span>
-<h4 class="text-headline-md font-headline-md text-white">15 Villas at SAR</h4>
-<p class="text-body-md text-on-surface-variant mt-2 opacity-0 group-hover:opacity-100 transition-opacity delay-200">Complete gypsum ceiling, interior, and exterior painting for a premium residential complex.</p>
-</div>
-</div>
-<div class="group relative aspect-[3/4] overflow-hidden reveal-up" style="transition-delay: 200ms;">
-<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A sleek corporate boardroom with a monolithic wooden table and ergonomic designer chairs. The room features architectural lighting integrated into the ceiling and dark paneled walls. The space is vast and professional, embodying the corporate authority of a headquarters fit-out project." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLpG0IO5Owkx7zmvXAmuB3bBhrELh0MEm1zacMhwwx82RX1E-Q0Wlse9aP4tjyv2aVuYAq-sZI0ThsISXmp70AjE2QndV8jwknHfWp7nl91OZfGRN7eaCrqKLT6ZikUCEmkSw1W0VzVwbn6N6eYftWQTvjyv-ML1E-97PfV2EGlUyit1AGDa5gvAQLEfCZSfabkB7QPzhtVImj60AFeTW44oUZie0UMn7gZMxd-6-gmhy4SwYod94fzeuBRJ2ubPxjMyloH2P_yBY"/>
-<div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform">
-<span class="text-label-caps text-primary mb-2">Commercial HQ</span>
-<h4 class="text-headline-md font-headline-md text-white">Al Zamil Group HQ</h4>
-<p class="text-body-md text-on-surface-variant mt-2 opacity-0 group-hover:opacity-100 transition-opacity delay-200">Signature headquarters fit-out at the prestigious Manama location.</p>
-</div>
-</div>
-<div class="group relative aspect-[3/4] overflow-hidden reveal-up" style="transition-delay: 400ms;">
-<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A stunning modern kitchen with a large marble island and integrated gold hardware. The cabinetry is dark charcoal with subtle lighting accents. The overall aesthetic is one of clean lines, expensive materials, and architectural precision, showcasing high-fidelity interior design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_33a1gB9SqR4gZgG0Qwo_GdQT-S7ylfNLVJnJgFu7tLzhDLspTzR47bQmOzUnHdESz_RVRQDeI6I35mo9dlM51vQHuGiWQ-jnvWFSi5XXR0MfIypOC70SBOgrZhkwAG5YAv5sotEWRsiYZLAV8ZdAMZBC1dJzOdLnVV5erYidsIoNx6UmWQ7Eu6ZcxtFkoNs_thwDmBLhjZc2724nqFO_0lT3ouay13vI8eHx6x-wON-yGT3msVjeAiYh4B-XehrYJ1VS_iYYvI8"/>
-<div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform">
-<span class="text-label-caps text-primary mb-2">Waterfront Living</span>
-<h4 class="text-headline-md font-headline-md text-white">Marassi Shores</h4>
-<p class="text-body-md text-on-surface-variant mt-2 opacity-0 group-hover:opacity-100 transition-opacity delay-200">Complete Corian top works, bespoke vanity units, and luxury bathroom cladding.</p>
-</div>
-</div>
-</div>
-<div class="mt-section-gap grid grid-cols-1 md:grid-cols-2 gap-margin-desktop">
-<div class="reveal-up border-t border-outline-variant/30 pt-12">
-<h4 class="text-headline-md font-headline-md text-primary mb-8">Selected Projects</h4>
-<div class="space-y-6">
-<div class="flex items-center gap-4 group cursor-pointer reveal-up" style="transition-delay: 100ms;">
-<div class="w-2 h-2 rounded-full bg-primary-container transition-transform group-hover:scale-150 group-hover:shadow-[0_0_10px_#d4af37]"></div>
-<span class="text-body-lg font-body-lg group-hover:translate-x-2 transition-transform">Royal Bahrain Hospital, Janabia</span>
-</div>
-<div class="flex items-center gap-4 group cursor-pointer reveal-up" style="transition-delay: 200ms;">
-<div class="w-2 h-2 rounded-full bg-primary-container transition-transform group-hover:scale-150 group-hover:shadow-[0_0_10px_#d4af37]"></div>
-<span class="text-body-lg font-body-lg group-hover:translate-x-2 transition-transform">Hamza Law Office, Al Zamil Tower</span>
-</div>
-<div class="flex items-center gap-4 group cursor-pointer reveal-up" style="transition-delay: 300ms;">
-<div class="w-2 h-2 rounded-full bg-primary-container transition-transform group-hover:scale-150 group-hover:shadow-[0_0_10px_#d4af37]"></div>
-<span class="text-body-lg font-body-lg group-hover:translate-x-2 transition-transform">Fontana Tower Apartment Furnishings</span>
-</div>
-<div class="flex items-center gap-4 group cursor-pointer reveal-up" style="transition-delay: 400ms;">
-<div class="w-2 h-2 rounded-full bg-primary-container transition-transform group-hover:scale-150 group-hover:shadow-[0_0_10px_#d4af37]"></div>
-<span class="text-body-lg font-body-lg group-hover:translate-x-2 transition-transform">Ministry of Justice Hall, Manama</span>
-</div>
-</div>
-</div>
-<div class="reveal-up glass-card p-12 flex flex-col justify-center items-center text-center">
-<span class="material-symbols-outlined text-[64px] text-primary mb-6 transition-transform hover:rotate-12 duration-500" style="font-variation-settings: 'FILL' 1;">architecture</span>
-<h4 class="text-headline-md font-headline-md mb-4">Uncompromising Standards</h4>
-<p class="text-body-md text-on-surface-variant max-w-sm">Every millimeter is measured, every material selected for its longevity and aesthetic prestige.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- SECTION 3: SIGNATURE RESTAURANTS -->
-<section class="relative py-section-gap px-margin-desktop max-w-container-max mx-auto">
-<div class="mb-24 text-center reveal-up">
-<h2 class="text-label-caps font-label-caps text-primary mb-2 tracking-[0.2em] uppercase">Sector III</h2>
-<h3 class="text-headline-lg font-headline-lg text-on-background">Signature Restaurant Construction</h3>
-<div class="w-24 h-1 bg-primary mx-auto mt-8 transition-all duration-1000 group-active:w-48"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-<!-- Bento Layout for Restaurants -->
-<div class="md:col-span-8 bg-surface-container p-12 reveal-up relative overflow-hidden group">
-<img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-1000" data-alt="A trendy upscale cafe interior with industrial-chic elements. Exposed brick walls, hanging Edison bulbs, and minimalist wooden tables create a warm, inviting atmosphere. The space is filled with green indoor plants and features a large glass display for pastries. The lighting is soft and golden, projecting a modern retail and hospitality vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKQJZs_hmCQ0xL5TEMXN51YGrORMkfOnGqJU42Ge_5MlkxbxHtq3Z0OQFLKVZF2zV8EPiFIhu-n2j7kr5p8lFIQ63tG2oq-9Ez4_2fF0EShjjhfUeEgT1mNOewPnT9AzQDvR1u1q6oOOhQWaQVyDevTw-P0kVx6nLcXTou-zFzQpcwauqlG3Vg2x2iia6Nqc5oSTn4erVw_-nG8f6JXQplO9zNZ2u6s--DOicCmaXmM39uU29NziElxNjFd4PE3k7X7uqHGdszrIY"/>
-<div class="relative z-10 h-full flex flex-col justify-between">
-<div>
-<h4 class="text-headline-md font-headline-md text-primary mb-4">Loop Café Concept</h4>
-<p class="text-body-lg text-on-background/80 max-w-lg mb-8">
-                        Complete construction and interior fit-out for Loop Café at multiple strategic locations across the Kingdom.
-                    </p>
-<div class="flex gap-4 flex-wrap">
-<span class="px-4 py-1 border border-primary/30 text-label-caps text-primary rounded-full hover:bg-primary hover:text-on-primary transition-colors cursor-default">Aali</span>
-<span class="px-4 py-1 border border-primary/30 text-label-caps text-primary rounded-full hover:bg-primary hover:text-on-primary transition-colors cursor-default">Diyar Al Muharraq</span>
-<span class="px-4 py-1 border border-primary/30 text-label-caps text-primary rounded-full hover:bg-primary hover:text-on-primary transition-colors cursor-default">NBB Manama</span>
-</div>
-</div>
-</div>
-</div>
-<div class="md:col-span-4 bg-primary text-on-primary-fixed p-12 reveal-up transition-transform hover:scale-[1.02] duration-500" style="transition-delay: 200ms;">
-<h4 class="text-headline-md font-headline-md mb-6">WOK Station</h4>
-<p class="text-body-md mb-8">Multi-branch rollout at Galaria Mall, Seef, and Platinum Tower. Fast-track construction with high-specification commercial kitchens.</p>
-<div class="h-1 bg-on-primary-fixed/30 w-full overflow-hidden">
-<div class="h-full bg-on-primary-fixed w-1/2 group-hover:w-full transition-all duration-700"></div>
-</div>
-<div class="mt-8 flex justify-between items-center">
-<span class="text-label-caps font-bold">480 sqm total</span>
-<span class="material-symbols-outlined transition-transform group-hover:rotate-45">restaurant</span>
-</div>
-</div>
-<div class="md:col-span-4 glass-card p-12 reveal-up" style="transition-delay: 100ms;">
-<h4 class="text-headline-md font-headline-md text-primary mb-4">Godiva Chocolate</h4>
-<p class="text-body-md text-on-surface-variant">Luxury retail outlet construction at Al A'ali Mall, emphasizing premium finishes and climate-controlled display areas.</p>
-</div>
-<div class="md:col-span-4 border border-outline-variant/30 p-12 reveal-up bg-surface-container-low transition-all hover:bg-surface-container" style="transition-delay: 300ms;">
-<h4 class="text-headline-md font-headline-md text-on-background mb-4">Florist Daughter</h4>
-<p class="text-body-md text-on-surface-variant">Bespoke florist and restaurant fusion space at Al A'ali Mall. Complex MEP for integrated plant life.</p>
-</div>
-<div class="md:col-span-4 bg-surface-container-high p-12 reveal-up transition-all hover:bg-surface-bright" style="transition-delay: 500ms;">
-<h4 class="text-headline-md font-headline-md text-on-background mb-4">Kasbah Restaurant</h4>
-<p class="text-body-md text-on-surface-variant">Traditional Moroccan influence met with modern architectural execution at Platinum Tower, Seef District.</p>
-</div>
-</div>
-</section>
-<!-- FOOTER -->
-<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-section-gap max-w-container-max mx-auto gap-8 reveal-up">
-<div class="flex flex-col items-center md:items-start">
-<div class="text-headline-md font-headline-md text-primary mb-4 uppercase">GOLDEN PEARL</div>
-<p class="text-body-md font-body-md text-on-surface-variant max-w-sm text-center md:text-left">
-                Excellence in construction and trading across the Kingdom of Bahrain since 2012.
-            </p>
-</div>
-<div class="flex gap-gutter text-label-caps font-label-caps flex-wrap justify-center">
-<a class="text-on-surface-variant hover:text-primary underline decoration-transparent hover:decoration-primary transition-all duration-300" href="#">Privacy Policy</a>
-<a class="text-on-surface-variant hover:text-primary underline decoration-transparent hover:decoration-primary transition-all duration-300" href="#">Terms of Service</a>
-<a class="text-on-surface-variant hover:text-primary underline decoration-transparent hover:decoration-primary transition-all duration-300" href="#">Careers</a>
-<a class="text-on-surface-variant hover:text-primary underline decoration-transparent hover:decoration-primary transition-all duration-300" href="#">Locations</a>
-</div>
-<div class="text-label-caps font-label-caps text-on-surface-variant text-center md:text-right">
-            © 2024 GOLDEN PEARL CONSTRUCTION &amp; TRADING. ALL RIGHTS RESERVED.
-        </div>
-</div>
-</footer>
-<script>
-    // Loader removal
-    window.addEventListener('load', () => {
-        const loader = document.getElementById('loader');
-        loader.style.transition = 'opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
-        loader.style.opacity = '0';
-        setTimeout(() => {
-            loader.style.display = 'none';
-            initReveal();
-        }, 1200);
-    });
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script src="assets/tailwind-config.js"></script>
+<link rel="stylesheet" href="assets/styles.css"/>
 
-    // Intersection Observer for Reveal
-    function initReveal() {
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -10% 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    // Stagger child elements if they exist
-                    const children = entry.target.querySelectorAll('.reveal-child');
-                    children.forEach((child, i) => {
-                        setTimeout(() => child.classList.add('active'), i * 150);
-                    });
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
-    }
-
-    // Parallax and Motion Effects
-    const heroImg = document.getElementById('hero-parallax-img');
-    const nav = document.getElementById('main-nav');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-        const scrollY = window.pageYOffset;
-        
-        // Hero Parallax
-        if (scrollY < window.innerHeight) {
-            heroImg.style.transform = `translateY(${scrollY * 0.4}px) scale(1.1)`;
-        }
-
-        // Nav Scroll Effect
-        if (scrollY > 50) {
-            nav.classList.add('nav-scrolled');
-        } else {
-            nav.classList.remove('nav-scrolled');
-        }
-        
-        lastScroll = scrollY;
-    });
-
-    // Smooth subtle mouse interaction for depth
-    document.addEventListener('mousemove', (e) => {
-        const moveX = (e.clientX - window.innerWidth / 2) * 0.005;
-        const moveY = (e.clientY - window.innerHeight / 2) * 0.005;
-        
-        document.querySelectorAll('.glass-card').forEach(el => {
-            if (el.matches(':hover')) {
-                el.style.transform = `translateY(-8px) rotateX(${-moveY * 2}deg) rotateY(${moveX * 2}deg)`;
-            }
-        });
-    });
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Golden Pearl Trading & Contracting — Project Portfolio",
+  "about": "Civil, industrial, interior fit-out and retail construction projects in the Kingdom of Bahrain.",
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": 24,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Midal Cables Co. BSC (C) — RO plant room construction" },
+      { "@type": "ListItem", "position": 2, "name": "Midal Cables Co. BSC (C) — Cable rewinding machines: civil works and machine installation" },
+      { "@type": "ListItem", "position": 3, "name": "Midal Cables Co. BSC (C) — Drum shop: civil works and machine installation" },
+      { "@type": "ListItem", "position": 4, "name": "Midal Cables Co. BSC (C) — Main gate security room civil construction" },
+      { "@type": "ListItem", "position": 5, "name": "Midal Cables Co. BSC (C) — Chemical store construction" },
+      { "@type": "ListItem", "position": 6, "name": "Midal Cables Co. BSC (C) — Main office and IT department interior works" },
+      { "@type": "ListItem", "position": 7, "name": "Alba Potline 6 offices" },
+      { "@type": "ListItem", "position": 8, "name": "Universal Rolling Mill, Hidd — permanent contractor for civil, MEP and interior works" },
+      { "@type": "ListItem", "position": 9, "name": "BRC Weldmesh headquarters, Minasulman — complete fit-out" },
+      { "@type": "ListItem", "position": 10, "name": "Three storey building, Janabiya — civil construction" },
+      { "@type": "ListItem", "position": 11, "name": "Al Shaya warehouse, Askar — steel structure for HVAC units" },
+      { "@type": "ListItem", "position": 12, "name": "15 villas at SAR" },
+      { "@type": "ListItem", "position": 13, "name": "Al Zamil Group headquarters, Manama" },
+      { "@type": "ListItem", "position": 14, "name": "Marassi Shores" },
+      { "@type": "ListItem", "position": 15, "name": "Royal Bahrain Hospital, Janabiya" },
+      { "@type": "ListItem", "position": 16, "name": "Hamza Law Office, Al Zamil Tower" },
+      { "@type": "ListItem", "position": 17, "name": "Fontana Tower apartment furnishings" },
+      { "@type": "ListItem", "position": 18, "name": "Ministry of Justice hall, Manama" },
+      { "@type": "ListItem", "position": 19, "name": "Loop Café — three sites" },
+      { "@type": "ListItem", "position": 20, "name": "WOK Station — multi-branch rollout" },
+      { "@type": "ListItem", "position": 21, "name": "Godiva Chocolate, Al A'ali Mall" },
+      { "@type": "ListItem", "position": 22, "name": "Florist Daughter, Al A'ali Mall" },
+      { "@type": "ListItem", "position": 23, "name": "Kasbah Restaurant, Platinum Tower" },
+      { "@type": "ListItem", "position": 24, "name": "Automotive showroom — façade and interior fit-out" }
+    ]
+  }
+}
 </script>
-    <script src="inquiry-modal.js"></script>
-</body></html>
+</head>
+
+<body class="font-body text-body-md bg-obsidian text-ink antialiased">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ NAV — SYNCHRONIZED BLOCK, see index.html ============ -->
+<nav id="main-nav" class="main-nav fixed top-0 left-0 w-full z-nav flex items-center justify-between h-20 px-margin-mobile md:px-margin-desktop bg-transparent border-b border-transparent">
+  <a class="flex items-center gap-3 group shrink-0" href="index.html" aria-label="Golden Pearl — home">
+    <img src="images/logo-mark.webp" alt="" width="134" height="150" decoding="async" class="h-10 w-auto"/>
+    <span class="font-display text-headline-sm tracking-[0.15em] uppercase text-gold group-hover:text-gold-light transition-colors hidden sm:inline">Golden Pearl</span>
+  </a>
+  <div id="nav-links" class="hidden md:flex items-center gap-8">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="services.html">Services</a>
+    <a class="nav-link" href="portfolio.html" aria-current="page">Portfolio</a>
+    <a class="nav-link" href="about.html">About</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+  </div>
+  <div class="hidden md:block">
+    <a class="btn" href="contact.html">Request a Quote</a>
+  </div>
+  <button id="nav-toggle" type="button" class="md:hidden text-gold p-2 -mr-2" aria-label="Open menu" aria-expanded="false">
+    <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+  </button>
+</nav>
+
+<main id="main" class="pt-20">
+
+  <!-- ========================================================= HERO
+       The full-screen 1.2s branded loader that used to gate this page has
+       been removed: it delayed the content and, because initReveal() only
+       ran after it finished, a JS failure left the page permanently blank.
+
+       This background is only 512px from source, so it is used as a soft
+       low-opacity texture behind type rather than a sharp full-bleed photo. -->
+  <header class="relative min-h-[48vh] flex items-center overflow-hidden border-b border-line">
+    <img src="images/portfolio-hero.webp" alt="" aria-hidden="true" width="512" height="512" fetchpriority="high" decoding="async"
+         class="absolute inset-0 w-full h-full object-cover opacity-25 blur-[2px] scale-105"/>
+    <div class="absolute inset-0 bg-gradient-to-b from-obsidian/80 via-obsidian/60 to-obsidian"></div>
+    <div class="relative z-10 w-full max-w-container mx-auto px-margin-mobile md:px-margin-desktop py-24">
+      <span class="eyebrow reveal">Project record</span>
+      <h1 class="font-display text-display-lg text-ink mt-5 mb-6 max-w-3xl reveal">24 delivered works across Bahrain</h1>
+      <p class="text-body-lg text-ink-muted max-w-2xl reveal">
+        Industrial installations inside live plants, headquarters and hospital fit-outs, and retail
+        rollouts delivered to mall handover dates — for clients who verify the detail before they
+        sign off.
+      </p>
+    </div>
+  </header>
+
+  <!-- ======================================================= FILTER -->
+  <section class="px-margin-mobile md:px-margin-desktop py-10 bg-surface border-b border-line">
+    <div class="max-w-container mx-auto">
+      <!-- hidden until site.js confirms it works; without JS every project
+           is simply shown, which is the correct fallback -->
+      <div id="project-filter" hidden class="flex flex-wrap items-center gap-3">
+        <span class="text-label-caps text-ink-subtle mr-2">Filter</span>
+        <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-filter="civil" aria-pressed="false">Civil &amp; Industrial</button>
+        <button type="button" class="chip" data-filter="fitout" aria-pressed="false">Interior Fit-Out</button>
+        <button type="button" class="chip" data-filter="retail" aria-pressed="false">Restaurants &amp; Retail</button>
+        <span id="filter-count" class="text-body-sm text-ink-subtle ml-auto" aria-live="polite"></span>
+      </div>
+      <p class="text-body-sm text-ink-subtle mt-4">
+        Imagery on this page is indicative of scope and finish standard. Photography of completed
+        works is available on request.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================================================== PROJECTS
+       Every project's client, scope, year and location is in the document
+       flow. The previous design put all of it inside
+       `opacity-0 group-hover:opacity-100`, so on any touch device this page
+       showed pictures and headings with no information at all. -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-obsidian">
+    <div class="max-w-container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+        <!-- ---------------------------------- CIVIL & INDUSTRIAL -->
+        <article class="project card reveal flex flex-col" data-sector="civil">
+          <div class="project-media">
+            <img src="images/portfolio-industrial-midal.webp" width="512" height="512" loading="lazy" decoding="async"
+                 alt="Industrial plant interior with steel machinery and pipework under focused lighting."/>
+          </div>
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Civil &amp; Industrial</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-4">Midal Cables Co. BSC (C)</h2>
+            <ul class="space-y-2 text-body-md text-ink-muted mb-5 flex-1">
+              <li class="flex justify-between gap-3 border-b border-line pb-2"><span>RO plant room construction</span><span class="text-ink-subtle text-body-sm shrink-0">2023</span></li>
+              <li class="flex justify-between gap-3 border-b border-line pb-2"><span>Cable rewinding machines &mdash; civil works &amp; machine installation</span><span class="text-ink-subtle text-body-sm shrink-0">2022</span></li>
+              <li class="flex justify-between gap-3 border-b border-line pb-2"><span>Drum shop &mdash; civil works &amp; machine installation</span><span class="text-ink-subtle text-body-sm shrink-0">2022</span></li>
+              <li class="flex justify-between gap-3 border-b border-line pb-2"><span>Main gate security room civil construction</span><span class="text-ink-subtle text-body-sm shrink-0">2021</span></li>
+              <li class="flex justify-between gap-3 border-b border-line pb-2"><span>Chemical store construction</span></li>
+              <li class="flex justify-between gap-3"><span>Main office &amp; IT department interior works</span></li>
+            </ul>
+            <p class="text-body-sm text-ink-subtle">Six packages delivered inside an operating cable manufacturing facility.</p>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="civil">
+          <div class="project-media">
+            <img src="images/home-sector-industrial.webp" width="512" height="512" loading="lazy" decoding="async"
+                 alt="Heavy industrial building with exposed structural steel framing."/>
+          </div>
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Heavy Industry</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Alba Potline 6 Offices</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Office fit-out for the Potline 6 facility at Aluminium Bahrain, including kitchen
+              cabinets, filing cabinets and vanity units.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Offices, joinery, specialised furniture</dd></div>
+              <div class="flex gap-2"><dt>Client:</dt><dd>Alba</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="civil">
+          <div class="project-media">
+            <img src="images/home-sector-commercial.webp" width="512" height="512" loading="lazy" decoding="async"
+                 alt="Large warehouse interior with a steel portal frame and high-level ductwork."/>
+          </div>
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Strategic Logistics</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Al Shaya Warehouse</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Full steel structural works with heavy-duty HVAC installation for a logistics
+              facility at Askar.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Steel structure, HVAC</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Askar</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="civil">
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Civil &amp; Industrial</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Universal Rolling Mill</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Appointed <span class="text-ink">permanent contractor</span> for civil, MEP and
+              interior works at the Hidd industrial area.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Civil, MEP &amp; interior</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Hidd</dd></div>
+              <div class="flex gap-2"><dt>Basis:</dt><dd>Ongoing appointment</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="civil">
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Industrial</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">BRC Weldmesh Headquarters</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Complete fit-out works at the Minasulman headquarters of a steel reinforcement
+              manufacturer.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Complete fit-out</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Minasulman</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="civil">
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Civil Works</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Three Storey Building, Janabiya</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Full civil works package for a three storey building.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Civil works</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Janabiya</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <!-- ------------------------------------- INTERIOR FIT-OUT -->
+        <article class="project card reveal flex flex-col" data-sector="fitout">
+          <div class="project-media">
+            <img src="images/luxury_living_room.webp" width="900" height="900" loading="lazy" decoding="async"
+                 alt="Luxury living room with bespoke joinery, warm indirect lighting and a marble fireplace."/>
+          </div>
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Residential</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">15 Villas at SAR</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Complete gypsum ceilings with interior and exterior painting across a premium
+              fifteen-villa residential complex.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Gypsum, painting</dd></div>
+              <div class="flex gap-2"><dt>Units:</dt><dd>15 villas</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="fitout">
+          <div class="project-media">
+            <img src="images/real-boardroom.webp" width="454" height="280" loading="lazy" decoding="async"
+                 alt="Corporate boardroom with a long timber table, designer chairs and integrated ceiling lighting."/>
+          </div>
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Commercial HQ</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Al Zamil Group HQ</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Signature headquarters fit-out at the group's Manama location.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Commercial fit-out</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Manama</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="fitout">
+          <div class="project-media">
+            <img src="images/portfolio-kitchen-marassi.webp" width="512" height="512" loading="lazy" decoding="async"
+                 alt="Contemporary kitchen with a marble island, dark cabinetry and brass hardware."/>
+          </div>
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Waterfront Living</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Marassi Shores</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Corian worktops, bespoke vanity units and luxury bathroom cladding for a waterfront
+              residential development.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Joinery, Corian, cladding</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Diyar Al Muharraq</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="fitout">
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Healthcare</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Royal Bahrain Hospital</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Interior fit-out works for a private hospital facility.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Interior fit-out</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Janabiya</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="fitout">
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Professional Office</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Hamza Law Office</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Office fit-out at Al Zamil Tower, delivered alongside the group headquarters works.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Office fit-out</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Al Zamil Tower</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="fitout">
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Residential</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Fontana Tower</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Apartment furnishing and joinery package for a residential tower.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Furnishings, joinery</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="fitout">
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Government</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Ministry of Justice Hall</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Hall fit-out for the Ministry of Justice in Manama.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Interior fit-out</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Manama</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="retail">
+          <div class="project-media">
+            <img src="images/real-showroom-exterior.webp" width="951" height="311" loading="lazy" decoding="async"
+                 alt="Car showroom fa&ccedil;ade with full-height structural glazing and aluminium composite cladding."/>
+          </div>
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Automotive Retail</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Automotive Showroom</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Showroom construction and fit-out: structural glazing and composite cladding to the
+              fa&ccedil;ade, with timber-panelled display walls and integrated product displays inside.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Fa&ccedil;ade, interior fit-out, displays</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Kingdom of Bahrain</dd></div>
+            </dl>
+            <!-- TODO(handoff): the brochure photography shows the marque's signage.
+                 Confirm the client name and whether it may be named publicly. -->
+          </div>
+        </article>
+
+        <!-- --------------------------------- RESTAURANTS & RETAIL -->
+        <article class="project card reveal flex flex-col" data-sector="retail">
+          <div class="project-media">
+            <img src="images/portfolio-restaurant-loopcafe.webp" width="512" height="512" loading="lazy" decoding="async"
+                 alt="Upscale caf&eacute; interior with exposed brick, pendant lighting and a glass pastry display."/>
+          </div>
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Hospitality &mdash; 3 sites</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Loop Caf&eacute;</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Complete construction and interior fit-out at three strategic locations across the
+              Kingdom.
+            </p>
+            <ul class="flex flex-wrap gap-2 mb-4">
+              <li class="px-3 py-1 border border-gold-dark text-body-sm text-gold rounded-pill">A'ali</li>
+              <li class="px-3 py-1 border border-gold-dark text-body-sm text-gold rounded-pill">Diyar Al Muharraq</li>
+              <li class="px-3 py-1 border border-gold-dark text-body-sm text-gold rounded-pill">NBB Manama</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="retail">
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Hospitality &mdash; multi-branch</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">WOK Station</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Fast-track multi-branch rollout with high-specification commercial kitchens, at The
+              Galleria in Seef and at Platinum Tower.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Fit-out, commercial kitchens</dd></div>
+              <div class="flex gap-2"><dt>Area:</dt><dd>480 sqm total</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="retail">
+          <div class="project-media">
+            <img src="images/real-godiva.webp" width="452" height="391" loading="lazy" decoding="async"
+                 alt="Premium retail display area with controlled lighting and polished stone finishes."/>
+          </div>
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Luxury Retail</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Godiva Chocolate</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Retail outlet construction at Al A'ali Mall, with premium finishes and
+              climate-controlled display areas.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Retail fit-out, climate control</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Al A'ali Mall</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="retail">
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Retail &amp; Hospitality</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Florist Daughter</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Bespoke florist and restaurant fusion space at Al A'ali Mall, with complex MEP to
+              support integrated plant life.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Fit-out, specialist MEP</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Al A'ali Mall</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal flex flex-col" data-sector="retail">
+          <div class="p-7 flex-1 flex flex-col">
+            <span class="eyebrow">Restaurant</span>
+            <h2 class="font-display text-headline-sm text-ink mt-3 mb-3">Kasbah Restaurant</h2>
+            <p class="text-body-md text-ink-muted mb-5 flex-1">
+              Traditional Moroccan design executed with modern construction detailing at Platinum
+              Tower, Seef District.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Restaurant fit-out</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Seef</dd></div>
+            </dl>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== CTA -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface border-t border-line">
+    <div class="max-w-container mx-auto text-center">
+      <h2 class="font-display text-headline-lg text-ink mb-5 reveal">Want references for any of these?</h2>
+      <p class="text-body-lg text-ink-muted max-w-2xl mx-auto mb-10 reveal">
+        We can put you in touch with the client contact for comparable work, and share photography
+        and a scope breakdown on request.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
+        <a class="btn shimmer" href="contact.html">Request a Quote</a>
+        <!-- TODO(contact) -->
+        <a class="btn-ghost" href="mailto:info@goldenpearlbh.com">
+          <span class="material-symbols-outlined text-lg" aria-hidden="true">mail</span> info@goldenpearlbh.com
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ========== FOOTER — SYNCHRONIZED BLOCK, see index.html ========== -->
+<footer class="bg-obsidian border-t border-line px-margin-mobile md:px-margin-desktop pt-20 pb-10">
+  <div class="max-w-container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-gutter">
+    <div>
+      <img src="images/logo-lockup.webp" alt="Golden Pearl — Building value" width="320" height="275" loading="lazy" decoding="async" class="h-24 w-auto mb-5"/>
+      <p class="text-body-md text-ink-muted max-w-xs">
+        Golden Pearl Trading &amp; Contracting Co. WLL. Civil construction, industrial maintenance,
+        MEP and interior fit-out across the Kingdom of Bahrain since 2016.
+      </p>
+    </div>
+    <div>
+      <h2 class="text-label-caps text-ink mb-5">Services</h2>
+      <ul class="space-y-3 text-body-md">
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="services.html#civil">Civil &amp; Industrial</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="services.html#mep">MEP &amp; Fire Systems</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="services.html#fitout">Interior Fit-Out</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="services.html#joinery">Joinery &amp; Millwork</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="services.html#landscaping">Landscaping</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="services.html#design">Design &amp; Drawings</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="text-label-caps text-ink mb-5">Company</h2>
+      <ul class="space-y-3 text-body-md">
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="portfolio.html">Portfolio</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="about.html">About Us</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="contact.html">Contact</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="privacy.html">Privacy Policy</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div id="contact-details">
+      <h2 class="text-label-caps text-ink mb-5">Contact</h2>
+      <ul class="space-y-4 text-body-md">
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-gold text-xl shrink-0" aria-hidden="true">mail</span>
+          <a class="text-ink-muted hover:text-gold transition-colors break-all" href="mailto:info@goldenpearlbh.com">info@goldenpearlbh.com</a>
+        </li>
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-gold text-xl shrink-0" aria-hidden="true">call</span>
+          <!-- TODO(phone): the company brochure prints "+973 693915" — six
+               digits, which is not a valid eight-digit Bahraini number. Shown
+               exactly as printed and deliberately NOT a tel: link, so nobody
+               is dialled by mistake. Replace with the full number. -->
+          <span class="text-ink-muted">+973 693915</span>
+        </li>
+        <li class="text-ink-muted">Flat 2, Bldg 137, Road 3402,<br/>Block 634, Ma&rsquo;amer,<br/>Kingdom of Bahrain</li>
+        <li class="text-ink-subtle text-body-sm">Sun&ndash;Thu, 8:00&ndash;17:00 (AST)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-container mx-auto mt-16 pt-8 border-t border-line flex flex-col sm:flex-row justify-between gap-4 text-body-sm text-ink-subtle">
+    <p>&copy; <span data-year>2026</span> Golden Pearl Trading &amp; Contracting. All rights reserved.</p>
+    <p>CR No. <span class="text-ink-muted">TODO(contact)</span> &middot; Kingdom of Bahrain</p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script src="inquiry-modal.js"></script>
+</body>
+</html>

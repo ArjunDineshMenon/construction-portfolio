@@ -1,0 +1,400 @@
+/* ==========================================================================
+   Golden Pearl Trading & Contracting — shared stylesheet
+   --------------------------------------------------------------------------
+   Replaces the four separate <style> blocks that used to live in each page.
+   Those had four different reveal systems (.fade-in-up, .reveal-left,
+   .reveal-up, .reveal) and three copies of .nav-scrolled.
+
+   Colour values are written as literal hex here because this is a plain CSS
+   file, not a Tailwind build — theme() is unavailable. They mirror
+   assets/tailwind-config.js; change both together.
+     obsidian #0a0a0a   surface-2 #151515   gold #d4af37
+     gold-light #f2ca50 ink-muted #d6d3cd   line #2a2a28
+   ========================================================================== */
+
+/* ---------- Base ---------- */
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: #d4af37; color: #241a00; }
+
+/* Skip link — first tab stop, visible only when focused */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 200;
+  padding: 0.75rem 1.25rem;
+  background: #d4af37;
+  color: #241a00;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 1rem; }
+
+/* ---------- Focus ----------
+   services.html previously shipped:
+     *:focus { outline: none !important; box-shadow: none !important; }
+   which removed every focus indicator on the page — a WCAG 2.4.7 failure.
+   :focus-visible gives keyboard users a clear ring without showing it on
+   mouse clicks. */
+:focus-visible {
+  outline: 2px solid #f2ca50;
+  outline-offset: 3px;
+}
+
+/* ---------- Scroll reveal ----------
+   The `.js` class is added to <html> by an inline snippet in each page's
+   <head>. Without JavaScript the class never appears, so `.reveal` keeps its
+   natural opacity and every page still renders its content. Previously
+   `.reveal { opacity: 0 }` was unconditional, so portfolio.html and
+   about.html rendered completely blank when JS failed. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.js .reveal-left  { transform: translateX(-32px); }
+.js .reveal-right { transform: translateX(32px); }
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Type helpers ---------- */
+
+.eyebrow {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #d4af37;
+}
+
+.rule {
+  width: 3rem;
+  height: 1px;
+  background: #d4af37;
+  border: 0;
+  margin: 0;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  /* 48px min touch target (WCAG 2.5.5) */
+  min-height: 3rem;
+}
+
+.btn {
+  background: #d4af37;
+  color: #241a00;
+}
+.btn:hover { background: #f2ca50; }
+
+.btn-ghost {
+  background: transparent;
+  color: #d4af37;
+  border-color: #d4af37;
+}
+.btn-ghost:hover {
+  background: #d4af37;
+  color: #241a00;
+}
+
+.btn[disabled] { opacity: 0.6; cursor: not-allowed; }
+
+/* Shimmer sweep, used sparingly on primary hero CTAs */
+.shimmer { position: relative; overflow: hidden; }
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 -100%;
+  width: 50%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+.shimmer:hover::after { left: 150%; }
+
+/* ---------- Cards ---------- */
+
+.card {
+  background: #151515;
+  border: 1px solid #2a2a28;
+  transition: border-color 0.4s, background-color 0.4s, transform 0.4s;
+}
+.card:hover,
+.card:focus-within {
+  background: #1c1c1c;
+  border-color: #8f7420;
+}
+
+/* Lifted variant for feature cards */
+.card-lift:hover,
+.card-lift:focus-within {
+  transform: translateY(-6px);
+  border-color: #d4af37;
+  box-shadow: 0 16px 40px -20px rgba(212, 175, 55, 0.35);
+}
+
+/* ---------- Project cards ----------
+   The previous design put every project's client, scope and year inside
+   `opacity-0 group-hover:opacity-100`. On a touch screen there is no hover,
+   so the portfolio — the page whose entire job is proof — showed pictures
+   with no information. Metadata is now always in the flow; the image only
+   scales on hover as decoration. */
+
+.project-media {
+  position: relative;
+  overflow: hidden;
+  background: #151515;
+  aspect-ratio: 4 / 3;
+}
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.project:hover .project-media img,
+.project:focus-within .project-media img {
+  transform: scale(1.06);
+}
+
+/* Branded placeholder shown when an image is missing or fails to load.
+   Set by site.js via an onerror handler, and used for projects that have no
+   photograph yet. */
+.project-media--empty,
+.media-fallback {
+  background-image:
+    linear-gradient(135deg, rgba(212, 175, 55, 0.10) 0%, transparent 55%),
+    radial-gradient(#d4af37 0.5px, transparent 0.5px);
+  background-size: auto, 22px 22px;
+  background-color: #151515;
+}
+.project-media--empty img { display: none; }
+
+/* ---------- Stats ---------- */
+
+.stat-value {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  line-height: 1;
+  font-weight: 700;
+  color: #d4af37;
+}
+
+/* ---------- Filter chips ---------- */
+
+.chip {
+  padding: 0.625rem 1.25rem;
+  min-height: 2.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d6d3cd;
+  background: transparent;
+  border: 1px solid #2a2a28;
+  cursor: pointer;
+  transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+}
+.chip:hover { color: #d4af37; border-color: #8f7420; }
+.chip[aria-pressed='true'] {
+  background: #d4af37;
+  border-color: #d4af37;
+  color: #241a00;
+}
+
+/* ---------- Forms ---------- */
+
+.field-label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  min-height: 3rem;
+  background: #151515;
+  border: 1px solid #3d3320;
+  color: #ffffff;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 1rem; /* 16px — stops iOS Safari zooming on focus */
+  transition: border-color 0.25s;
+}
+.field::placeholder { color: #a8a29a; }
+.field:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+.field:focus-visible { outline: 2px solid #f2ca50; outline-offset: 2px; }
+textarea.field { resize: vertical; min-height: 7rem; }
+
+/* Honeypot — visually gone but not display:none, which some bots detect */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ---------- Navigation ---------- */
+
+.main-nav {
+  transition: background-color 0.3s, border-color 0.3s, backdrop-filter 0.3s;
+}
+.nav-scrolled {
+  background-color: rgba(10, 10, 10, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom-color: rgba(212, 175, 55, 0.22);
+}
+
+.nav-link {
+  position: relative;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding-bottom: 0.25rem;
+  transition: color 0.3s;
+}
+.nav-link:hover { color: #d4af37; }
+.nav-link[aria-current='page'] {
+  color: #d4af37;
+  border-bottom: 1px solid #d4af37;
+}
+
+/* ---------- Mobile drawer ----------
+   Injected once by assets/site.js. The old markup had a hamburger button with
+   no handler and no drawer on all four pages, so below 768px the site had no
+   navigation at all and the "Inquire Now" CTA was hidden. */
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(16px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.drawer.is-open { opacity: 1; visibility: visible; }
+.drawer[hidden] { display: none; }
+
+.drawer-link {
+  display: block;
+  padding: 1.125rem 0;
+  border-bottom: 1px solid #2a2a28;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: color 0.25s, padding-left 0.25s;
+}
+.drawer-link:hover,
+.drawer-link:focus-visible { color: #d4af37; padding-left: 0.5rem; }
+.drawer-link[aria-current='page'] { color: #d4af37; }
+
+body.drawer-open { overflow: hidden; }
+
+/* ---------- Marquee ----------
+   Kept from the old about page, but the text was #ffffff at 5% opacity
+   (~1.2:1) which was effectively invisible, and 120px which overflowed
+   phones. Now uses a readable subtle tone and fluid size. */
+
+.marquee { overflow: hidden; white-space: nowrap; }
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 3rem;
+  animation: marquee-scroll 38s linear infinite;
+  will-change: transform;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-word {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-style: italic;
+  text-transform: uppercase;
+  color: #2a2a28;
+}
+.marquee-word--gold { color: #8f7420; }
+
+/* ---------- Process steps ---------- */
+
+.step-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: #8f7420;
+}
+
+/* ---------- Parallax ---------- */
+
+.parallax { will-change: transform; }
+
+/* ---------- Reduced motion ----------
+   Previously only about.html honoured this. Now global: no parallax, no
+   marquee, no reveal translation, no scaling. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .js .reveal { opacity: 1 !important; transform: none !important; }
+  .marquee-track { animation: none !important; }
+  .parallax { transform: none !important; }
+  .project:hover .project-media img { transform: none !important; }
+  .shimmer::after { display: none; }
+  #particle-canvas { display: none !important; }
+}

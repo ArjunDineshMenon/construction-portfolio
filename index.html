@@ -1,347 +1,522 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en" class="dark">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Golden Pearl - Architectural Precision &amp; Uncompromising Luxury</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "surface-dim": "#131313",
-                        "on-primary-fixed": "#241a00",
-                        "on-primary": "#3c2f00",
-                        "tertiary-fixed-dim": "#fcba64",
-                        "on-primary-fixed-variant": "#574500",
-                        "secondary-fixed": "#fee263",
-                        "outline": "#99907c",
-                        "primary-fixed-dim": "#e9c349",
-                        "on-surface": "#e5e2e1",
-                        "surface-container-low": "#1c1b1b",
-                        "surface-container": "#201f1f",
-                        "on-error-container": "#ffdad6",
-                        "secondary-container": "#a79013",
-                        "secondary": "#e1c64a",
-                        "inverse-primary": "#735c00",
-                        "surface-variant": "#353534",
-                        "tertiary": "#ffc479",
-                        "on-secondary-fixed-variant": "#534600",
-                        "on-tertiary-container": "#623d00",
-                        "surface-container-highest": "#353534",
-                        "on-secondary-container": "#322900",
-                        "on-primary-container": "#554300",
-                        "tertiary-fixed": "#ffddb6",
-                        "background": "#000000",
-                        "on-background": "#ffffff",
-                        "error": "#ffb4ab",
-                        "on-tertiary": "#462a00",
-                        "on-surface-variant": "#d0c5af",
-                        "tertiary-container": "#e6a753",
-                        "on-tertiary-fixed": "#2a1800",
-                        "surface-bright": "#3a3939",
-                        "surface-container-high": "#2a2a2a",
-                        "on-secondary": "#3a3000",
-                        "error-container": "#93000a",
-                        "on-tertiary-fixed-variant": "#643f00",
-                        "on-secondary-fixed": "#221b00",
-                        "surface-container-lowest": "#000000",
-                        "primary-container": "#d4af37",
-                        "inverse-surface": "#e5e2e1",
-                        "secondary-fixed-dim": "#e1c64a",
-                        "primary": "#d4af37",
-                        "surface-tint": "#e9c349",
-                        "surface": "#000000",
-                        "outline-variant": "#4d4635",
-                        "on-error": "#690005",
-                        "inverse-on-surface": "#313030",
-                        "primary-fixed": "#ffe088"
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    spacing: {
-                        "gutter": "32px",
-                        "margin-mobile": "24px",
-                        "container-max": "1440px",
-                        "margin-desktop": "80px",
-                        "unit": "8px",
-                        "section-gap": "120px"
-                    },
-                    fontFamily: {
-                        "headline-lg-mobile": ["Playfair Display"],
-                        "body-md": ["Montserrat"],
-                        "body-lg": ["Montserrat"],
-                        "display-lg": ["Playfair Display"],
-                        "label-caps": ["Montserrat"],
-                        "headline-md": ["Playfair Display"],
-                        "headline-lg": ["Playfair Display"]
-                    },
-                    fontSize: {
-                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
-                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700" }],
-                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
-                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }]
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-        .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
-        .gold-border-glow:hover { border-color: theme('colors.primary'); box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); }
-        
-        /* New Animations */
-        .parallax-zoom { transition: transform 0.1s linear; }
-        
-        .shimmer-btn {
-            position: relative;
-            overflow: hidden;
-        }
-        .shimmer-btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transform: skewX(-20deg);
-            transition: left 0.5s;
-        }
-        .shimmer-btn:hover::after {
-            left: 150%;
-        }
-        
-        .nav-scrolled {
-            background-color: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom-color: rgba(212, 175, 55, 0.2);
-        }
-    </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Golden Pearl Trading &amp; Contracting | Civil, MEP &amp; Fit-Out Contractor in Bahrain</title>
+<meta name="description" content="Golden Pearl Trading &amp; Contracting is a Bahrain contractor delivering civil and industrial works, MEP, and luxury interior fit-out since 2016. Trusted by Alba, Midal Cables and the Ministry of Justice."/>
+<link rel="canonical" href="https://arjundineshmenon.github.io/construction-portfolio/index.html"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Golden Pearl Trading &amp; Contracting"/>
+<meta property="og:title" content="Golden Pearl Trading &amp; Contracting | Contractor in Bahrain"/>
+<meta property="og:description" content="Civil and industrial works, MEP, and luxury interior fit-out across the Kingdom of Bahrain since 2016."/>
+<meta property="og:image" content="https://arjundineshmenon.github.io/construction-portfolio/images/about-hero.webp"/>
+<meta property="og:url" content="https://arjundineshmenon.github.io/construction-portfolio/index.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<link rel="icon" href="favicon.png" sizes="180x180"/>
+<link rel="apple-touch-icon" href="favicon.png"/>
+<meta name="theme-color" content="#0a0a0a"/>
+
+<!-- Marks that scripting is available. assets/styles.css only hides .reveal
+     elements under `.js`, so with JavaScript off the page still renders. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Only the icons actually used, rather than the whole variable icon font. -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;icon_names=arrow_downward,arrow_outward,call,carpenter,check_circle,close,design_services,draw,engineering,foundation,mail,menu,park,plumbing" rel="stylesheet"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script src="assets/tailwind-config.js"></script>
+<link rel="stylesheet" href="assets/styles.css"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Golden Pearl Trading & Contracting Co. WLL.",
+  "description": "Civil and industrial construction, MEP, and luxury interior fit-out contractor based in the Kingdom of Bahrain.",
+  "foundingDate": "2016",
+  "url": "https://arjundineshmenon.github.io/construction-portfolio/",
+  "image": "https://arjundineshmenon.github.io/construction-portfolio/images/about-hero.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Flat No. 2, Bldg. 137, Road 3402, Block 634",
+    "addressLocality": "Ma'amer",
+    "addressCountry": "BH"
+  },
+  "email": "info@goldenpearlbh.com",
+  "areaServed": { "@type": "Country", "name": "Bahrain" },
+  "knowsAbout": ["Civil construction", "Industrial construction", "MEP", "Interior fit-out", "Joinery", "Landscaping"]
+}
+</script>
 </head>
-<body class="antialiased font-body-md">
-    <!-- TopNavBar -->
-    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-unit h-[80px] bg-transparent backdrop-blur-none border-b border-transparent transition-all duration-300" id="main-nav">
-        <a class="font-headline-md text-headline-md text-primary tracking-widest uppercase hover:text-primary-fixed transition-colors duration-300" href="index.html">
-            GOLDEN PEARL
+
+<body class="font-body text-body-md bg-obsidian text-ink antialiased">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================================================ NAV
+     SYNCHRONIZED BLOCK — identical on every page except aria-current.
+     If you edit this, edit it on all pages. The mobile drawer is built
+     from #nav-links by assets/site.js, so it needs no separate markup.
+     ============================================================ -->
+<nav id="main-nav" class="main-nav fixed top-0 left-0 w-full z-nav flex items-center justify-between h-20 px-margin-mobile md:px-margin-desktop bg-transparent border-b border-transparent">
+  <a class="flex items-center gap-3 group shrink-0" href="index.html" aria-label="Golden Pearl — home">
+    <img src="images/logo-mark.webp" alt="" width="134" height="150" decoding="async" class="h-10 w-auto"/>
+    <span class="font-display text-headline-sm tracking-[0.15em] uppercase text-gold group-hover:text-gold-light transition-colors hidden sm:inline">Golden Pearl</span>
+  </a>
+
+  <div id="nav-links" class="hidden md:flex items-center gap-8">
+    <a class="nav-link" href="index.html" aria-current="page">Home</a>
+    <a class="nav-link" href="services.html">Services</a>
+    <a class="nav-link" href="portfolio.html">Portfolio</a>
+    <a class="nav-link" href="about.html">About</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+  </div>
+
+  <div class="hidden md:block">
+    <a class="btn" href="contact.html">Request a Quote</a>
+  </div>
+
+  <button id="nav-toggle" type="button" class="md:hidden text-gold p-2 -mr-2" aria-label="Open menu" aria-expanded="false">
+    <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+  </button>
+</nav>
+
+<main id="main">
+
+  <!-- ========================================================== HERO
+       The old hero read "Building Value." over "Architectural Precision &
+       Uncompromising Luxury" — no indication of what the company builds,
+       where, or for whom. -->
+  <header class="relative min-h-[92vh] flex items-center overflow-hidden border-b border-line">
+    <img src="images/about-hero.webp" alt="" aria-hidden="true" width="512" height="512" fetchpriority="high" decoding="async"
+         class="absolute inset-0 w-full h-full object-cover opacity-40 parallax" data-parallax="0.08"/>
+    <div class="absolute inset-0 bg-gradient-to-b from-obsidian/85 via-obsidian/55 to-obsidian"></div>
+
+    <div class="relative z-10 w-full max-w-container mx-auto px-margin-mobile md:px-margin-desktop py-32">
+      <div class="max-w-3xl">
+        <span class="eyebrow reveal">Kingdom of Bahrain &middot; Established 2016</span>
+        <h1 class="font-display text-display-xl text-ink mt-6 mb-6 reveal">
+          We build the <span class="text-gold">industrial</span> and finish the <span class="text-gold">exceptional</span>.
+        </h1>
+        <p class="text-body-lg text-ink-muted max-w-2xl mb-10 reveal">
+          Civil and industrial construction, MEP and fire systems, and luxury interior fit-out —
+          delivered across Bahrain for Alba, Midal Cables, the Ministry of Justice and leading
+          retail and hospitality brands.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 reveal">
+          <a class="btn shimmer" href="contact.html">Request a Quote</a>
+          <a class="btn-ghost" href="portfolio.html">View Our Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="#clients" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold z-10 p-2" aria-label="Scroll to content">
+      <span class="material-symbols-outlined animate-bounce" aria-hidden="true">arrow_downward</span>
+    </a>
+  </header>
+
+  <!-- ======================================================= CLIENTS
+       The client roster was previously buried on page three as plain text.
+       It is the single most persuasive thing the company has, so it now sits
+       directly under the hero.
+       TODO(logos): swap these wordmarks for real logo files once written
+       permission to display each client's mark has been obtained. -->
+  <section id="clients" class="py-16 md:py-20 px-margin-mobile md:px-margin-desktop border-b border-line bg-surface">
+    <div class="max-w-container mx-auto">
+      <p class="text-center text-body-sm uppercase tracking-[0.2em] text-ink-subtle mb-10 reveal">
+        Delivering for Bahrain's industrial, government and retail sectors
+      </p>
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-6 items-center">
+        <li class="text-center font-display text-headline-sm text-ink-subtle reveal">Alba</li>
+        <li class="text-center font-display text-headline-sm text-ink-subtle reveal">Midal Cables</li>
+        <li class="text-center font-display text-headline-sm text-ink-subtle reveal">Ministry of Justice</li>
+        <li class="text-center font-display text-headline-sm text-ink-subtle reveal">Al Zamil Group</li>
+        <li class="text-center font-display text-headline-sm text-ink-subtle reveal">Marassi Shores</li>
+        <li class="text-center font-display text-headline-sm text-ink-subtle reveal">Godiva</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================= STATS
+       Every figure here is derived from the project record on portfolio.html
+       — 24 delivered works, three sectors, five F&B brands, founded 2016.
+       Nothing is invented. -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-obsidian">
+    <div class="max-w-container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-gutter">
+      <div class="reveal border-l border-gold-dark pl-6">
+        <p class="stat-value">2016</p>
+        <p class="text-body-sm uppercase tracking-[0.15em] text-ink-subtle mt-3">Trading since</p>
+      </div>
+      <div class="reveal border-l border-gold-dark pl-6">
+        <p class="stat-value">24</p>
+        <p class="text-body-sm uppercase tracking-[0.15em] text-ink-subtle mt-3">Works delivered</p>
+      </div>
+      <div class="reveal border-l border-gold-dark pl-6">
+        <p class="stat-value">6</p>
+        <p class="text-body-sm uppercase tracking-[0.15em] text-ink-subtle mt-3">Disciplines in-house</p>
+      </div>
+      <div class="reveal border-l border-gold-dark pl-6">
+        <p class="stat-value">5</p>
+        <p class="text-body-sm uppercase tracking-[0.15em] text-ink-subtle mt-3">F&amp;B brands rolled out</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== CAPABILITIES
+       Six disciplines, matching services.html exactly. The old homepage
+       advertised four categories and the services page detailed three
+       different ones — the two lists had nothing in common.
+       Descriptions are always visible; previously they were opacity-0 until
+       hover, so touch users never saw them. -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface border-y border-line">
+    <div class="max-w-container mx-auto">
+      <div class="max-w-2xl mb-14 reveal">
+        <span class="eyebrow">Capabilities</span>
+        <h2 class="font-display text-headline-lg text-ink mt-4 mb-5">Six disciplines, one accountable contractor</h2>
+        <p class="text-body-lg text-ink-muted">
+          Structure, services and finishes are delivered by one team under a single contract —
+          which is how we hold programme and quality on fast-track fit-outs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+        <a class="card card-lift p-8 flex flex-col reveal" href="services.html#civil">
+          <span class="material-symbols-outlined text-gold text-4xl mb-5" aria-hidden="true">foundation</span>
+          <h3 class="font-display text-headline-sm text-ink mb-3">Civil &amp; Industrial Construction</h3>
+          <p class="text-body-md text-ink-muted flex-1">
+            Structural works, plant rooms, machine foundations and heavy-duty civil packages
+            inside live industrial facilities.
+          </p>
+          <span class="text-label-caps text-gold mt-6 inline-flex items-center gap-1">
+            Explore <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_outward</span>
+          </span>
         </a>
-        <div class="hidden md:flex items-center gap-8">
-            <a class="text-primary border-b border-primary pb-1 font-label-caps text-label-caps hover:text-primary transition-colors duration-500" href="index.html">HOME</a>
-            <a class="text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-500" href="services.html">SERVICES</a>
-            <a class="text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-500" href="portfolio.html">PORTFOLIO</a>
-            <a class="text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-500" href="about.html">ABOUT</a>
+
+        <a class="card card-lift p-8 flex flex-col reveal" href="services.html#mep">
+          <span class="material-symbols-outlined text-gold text-4xl mb-5" aria-hidden="true">plumbing</span>
+          <h3 class="font-display text-headline-sm text-ink mb-3">MEP &amp; Fire Systems</h3>
+          <p class="text-body-md text-ink-muted flex-1">
+            Mechanical, electrical, plumbing and fire design and installation, reviewed for
+            constructability and long-term maintainability.
+          </p>
+          <span class="text-label-caps text-gold mt-6 inline-flex items-center gap-1">
+            Explore <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_outward</span>
+          </span>
+        </a>
+
+        <a class="card card-lift p-8 flex flex-col reveal" href="services.html#fitout">
+          <span class="material-symbols-outlined text-gold text-4xl mb-5" aria-hidden="true">design_services</span>
+          <h3 class="font-display text-headline-sm text-ink mb-3">Interior Fit-Out</h3>
+          <p class="text-body-md text-ink-muted flex-1">
+            Turnkey fit-out including FF&amp;E for restaurants, cafés, hotels, offices and
+            residential — shell to handover.
+          </p>
+          <span class="text-label-caps text-gold mt-6 inline-flex items-center gap-1">
+            Explore <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_outward</span>
+          </span>
+        </a>
+
+        <a class="card card-lift p-8 flex flex-col reveal" href="services.html#joinery">
+          <span class="material-symbols-outlined text-gold text-4xl mb-5" aria-hidden="true">carpenter</span>
+          <h3 class="font-display text-headline-sm text-ink mb-3">Joinery &amp; Millwork</h3>
+          <p class="text-body-md text-ink-muted flex-1">
+            Bespoke vanity units, Corian tops, wardrobes and specialised furniture — from a
+            one-off prototype to a multi-branch rollout.
+          </p>
+          <span class="text-label-caps text-gold mt-6 inline-flex items-center gap-1">
+            Explore <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_outward</span>
+          </span>
+        </a>
+
+        <a class="card card-lift p-8 flex flex-col reveal" href="services.html#landscaping">
+          <span class="material-symbols-outlined text-gold text-4xl mb-5" aria-hidden="true">park</span>
+          <h3 class="font-display text-headline-sm text-ink mb-3">Landscaping &amp; External Works</h3>
+          <p class="text-body-md text-ink-muted flex-1">
+            Hard and soft landscaping, irrigation and external finishes that complete the
+            approach to a building.
+          </p>
+          <span class="text-label-caps text-gold mt-6 inline-flex items-center gap-1">
+            Explore <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_outward</span>
+          </span>
+        </a>
+
+        <a class="card card-lift p-8 flex flex-col reveal" href="services.html#design">
+          <span class="material-symbols-outlined text-gold text-4xl mb-5" aria-hidden="true">draw</span>
+          <h3 class="font-display text-headline-sm text-ink mb-3">Design &amp; Schematic Drawings</h3>
+          <p class="text-body-md text-ink-muted flex-1">
+            2D layouts and 3D perspectives for approvals and client sign-off, produced in-house
+            before a single tool goes on site.
+          </p>
+          <span class="text-label-caps text-gold mt-6 inline-flex items-center gap-1">
+            Explore <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_outward</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== FEATURED PROJECTS -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-obsidian">
+    <div class="max-w-container mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div class="max-w-2xl reveal">
+          <span class="eyebrow">Selected work</span>
+          <h2 class="font-display text-headline-lg text-ink mt-4">Built for clients who audit the detail</h2>
         </div>
-        <div class="hidden md:block">
-            <button class="open-inquiry-modal bg-primary text-on-primary-fixed font-label-caps text-label-caps px-6 py-3 uppercase hover:bg-primary-fixed transition-colors">INQUIRE NOW</button>
+        <a class="btn-ghost reveal shrink-0" href="portfolio.html">All 24 Projects</a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <article class="project card reveal">
+          <div class="project-media">
+            <img src="images/portfolio-industrial-midal.webp" width="512" height="512" loading="lazy" decoding="async"
+                 alt="Industrial plant interior with steel machinery and pipework under focused lighting."/>
+          </div>
+          <div class="p-7">
+            <span class="eyebrow">Civil &amp; Industrial</span>
+            <h3 class="font-display text-headline-sm text-ink mt-3 mb-3">Midal Cables Co. BSC (C)</h3>
+            <p class="text-body-md text-ink-muted mb-5">
+              Four packages between 2021 and 2023: RO plant room construction, cable rewinding and
+              drum shop machine installations, and the main gate security complex.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt class="text-ink-subtle">Scope:</dt><dd>Civil, structural, machine installation</dd></div>
+              <div class="flex gap-2"><dt class="text-ink-subtle">Years:</dt><dd>2021&ndash;2023</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal">
+          <div class="project-media">
+            <img src="images/real-boardroom.webp" width="454" height="280" loading="lazy" decoding="async"
+                 alt="Corporate boardroom with a long timber table, designer chairs and integrated ceiling lighting."/>
+          </div>
+          <div class="p-7">
+            <span class="eyebrow">Interior Fit-Out</span>
+            <h3 class="font-display text-headline-sm text-ink mt-3 mb-3">Al Zamil Group HQ</h3>
+            <p class="text-body-md text-ink-muted mb-5">
+              Signature headquarters fit-out at the group's Manama tower, delivered alongside a
+              separate law-office fit-out in the same building.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Commercial fit-out, joinery, MEP</dd></div>
+              <div class="flex gap-2"><dt>Location:</dt><dd>Manama</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project card reveal">
+          <div class="project-media">
+            <img src="images/portfolio-restaurant-loopcafe.webp" width="512" height="512" loading="lazy" decoding="async"
+                 alt="Upscale café interior with exposed brick, pendant lighting and a glass pastry display."/>
+          </div>
+          <div class="p-7">
+            <span class="eyebrow">Restaurants &amp; Retail</span>
+            <h3 class="font-display text-headline-sm text-ink mt-3 mb-3">Loop Café &mdash; multi-site rollout</h3>
+            <p class="text-body-md text-ink-muted mb-5">
+              Complete construction and fit-out at three locations: A'ali, Diyar Al Muharraq, and
+              the NBB building in Manama.
+            </p>
+            <dl class="text-body-sm text-ink-subtle space-y-1">
+              <div class="flex gap-2"><dt>Scope:</dt><dd>Turnkey fit-out, commercial kitchen</dd></div>
+              <div class="flex gap-2"><dt>Sites:</dt><dd>3</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== WHY US
+       Replaces eight abstract "pillars" (Ethics, Culture, Relationships…)
+       with four claims a buyer can actually act on. -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface border-y border-line">
+    <div class="max-w-container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-gutter lg:gap-24 items-center">
+      <div class="reveal reveal-left">
+        <div class="project-media !aspect-[4/5]">
+          <img src="images/real-industrial-scaffold.webp" width="454" height="504" loading="lazy" decoding="async"
+               alt="Architectural detail of a building façade lit from below at dusk."/>
         </div>
-        <button class="md:hidden text-primary">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
-    </nav>
-    
-    <!-- Hero Section -->
-    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-        <div class="absolute inset-0 z-0 h-[120%] w-[120%] -top-[10%] -left-[10%] bg-cover bg-center parallax-zoom" id="hero-bg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNwDcRF3VzmsNV8JDJzRAWFptn3gOverBuYRtNysT104ae64cSTuTTQ10S0vOYjuFuiC7X6qy67E0Us2rgwlmkAYKGDrkZMzgS_SUk833xAqhAnESA-1gPi9I4S53P5Yj3-q77r_w81nZpbGplsry4sQ9olEoryYpVkaEzm8I487EzvO85TGE1G0EvwcskubfH6BKw5SAvF2tKDzReC2hoc-PjoUAcLbJ_WS8fq2lYaNGAOVODUfTdv1aNtE6EAnN2gun6yGcwenw');"></div>
-        <div class="absolute inset-0 bg-black/60 z-0"></div>
-        <div class="relative z-10 text-center px-4 max-w-container-max mx-auto fade-in-up">
-            <h1 class="font-display-lg text-display-lg text-primary mb-6">Building Value.</h1>
-            <p class="font-body-lg text-body-lg text-white max-w-2xl mx-auto mb-10">Architectural Precision &amp; Uncompromising Luxury.</p>
-            <a href="services.html" class="inline-block bg-transparent border border-primary text-primary font-label-caps text-label-caps px-8 py-4 uppercase transition-colors duration-300 shimmer-btn hover:bg-primary hover:text-black">Explore Portfolio</a>
-        </div>
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-primary z-10">
-            <span class="material-symbols-outlined">arrow_downward</span>
-        </div>
-    </header>
-    
-    <!-- Mission & Vision Scrollytelling -->
-    <section class="relative bg-black">
-        <div class="fixed inset-0 z-[-1] bg-cover bg-center h-screen w-full" id="scrolly-bg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6JQwsxyqGa99VxLch2WmUSqw_CeXsd4C6apfa-nKql9BroGL72LYknQv3eSRKhS_dhDsPWWpGNnCXnUqsJSUWvuXaeDZYKGoq1kE-873DJqS3GiwdIZE1BtvxJ7Q7ODBZNWb2bMKOxdzcpI1MJt3wfCJvs4Ltb0Jz4JRknand9G3Z4bBnf2gesY6QW152OaTMG4xyoSAc4qop_MUMaLDFEs1QOo36tJS2iadS6sR5qcuffxNqljVp2_lEczp0zI4LjFwx1por9cI'); opacity: 0; transition: opacity 0.5s;"></div>
-        <div class="absolute inset-0 bg-black/80 z-[-1]" id="scrolly-overlay" style="opacity: 0; transition: opacity 0.5s;"></div>
-        <div class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative z-10" id="scrolly-content">
-            <div class="flex flex-col lg:flex-row gap-gutter">
-                <!-- Sticky Image Column -->
-                <div class="w-full lg:w-1/2 relative hidden lg:block">
-                    <div class="sticky top-[120px] h-[70vh] w-full border border-outline-variant/30 p-2 opacity-0 transition-opacity duration-500" id="scrolly-sticky-img">
-                        <div class="w-full h-full bg-black relative overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6JQwsxyqGa99VxLch2WmUSqw_CeXsd4C6apfa-nKql9BroGL72LYknQv3eSRKhS_dhDsPWWpGNnCXnUqsJSUWvuXaeDZYKGoq1kE-873DJqS3GiwdIZE1BtvxJ7Q7ODBZNWb2bMKOxdzcpI1MJt3wfCJvs4Ltb0Jz4JRknand9G3Z4bBnf2gesY6QW152OaTMG4xyoSAc4qop_MUMaLDFEs1QOo36tJS2iadS6sR5qcuffxNqljVp2_lEczp0zI4LjFwx1por9cI'); background-size: cover; background-position: center;">
-                            <div class="absolute inset-0 bg-black/40"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Scrolling Content Column -->
-                <div class="w-full lg:w-1/2 flex flex-col gap-32 pt-[20vh] pb-[20vh]">
-                    <div class="fade-in-up scrolly-card bg-[#111111]/90 backdrop-blur-md p-10 border border-outline-variant/30 shadow-2xl">
-                        <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">MISSION</h2>
-                        <div class="mb-8">
-                            <h3 class="font-body-lg text-body-lg text-primary font-bold mb-2">To provide Quality</h3>
-                            <p class="font-body-md text-body-md text-white">Every aspect of a project is given the same focus and attention to detail no matter how small, our clients know their brands are in safe hands.</p>
-                        </div>
-                        <div class="mb-8">
-                            <h3 class="font-body-lg text-body-lg text-primary font-bold mb-2">To provide Service</h3>
-                            <p class="font-body-md text-body-md text-white">To maintain the highest standards of manufacturing through precision and quality control processes, we use the latest automated machinery, thus reducing labour costs.</p>
-                        </div>
-                        <div>
-                            <h3 class="font-body-lg text-body-lg text-primary font-bold mb-2">To provide Reliability</h3>
-                            <p class="font-body-md text-body-md text-white">We can meet your requirement and timeline for one-off prototype, custom or large volume production run joinery.</p>
-                        </div>
-                    </div>
-                    <div class="fade-in-up scrolly-card bg-[#111111]/90 backdrop-blur-md p-10 border border-outline-variant/30 shadow-2xl">
-                        <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">VISION</h2>
-                        <p class="font-body-md text-body-md text-white">Be the premier engineering, construction, and project management organization by achieving extraordinary results for our customers, building satisfying careers for our people, and earning a fair return on the value we deliver.</p>
-                    </div>
-                </div>
+      </div>
+      <div class="reveal reveal-right">
+        <span class="eyebrow">Why Golden Pearl</span>
+        <h2 class="font-display text-headline-lg text-ink mt-4 mb-8">What clients actually hire us for</h2>
+        <ul class="space-y-7">
+          <li class="flex gap-4">
+            <span class="material-symbols-outlined text-gold mt-1 shrink-0" aria-hidden="true">check_circle</span>
+            <div>
+              <h3 class="font-display text-headline-sm text-ink mb-1">We work inside running plants</h3>
+              <p class="text-body-md text-ink-muted">Alba and Midal work happens around live production. We plan around shutdowns, permits and restricted access rather than asking for a clear site.</p>
             </div>
-        </div>
-    </section>
-    
-    <!-- Services Grid -->
-    <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-black border-t border-outline-variant/30 relative z-10">
-        <div class="max-w-container-max mx-auto">
-            <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-16 text-center fade-in-up">OUR EXPERTISE</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="expertise-grid">
-                <div class="fade-in-up group relative overflow-hidden bg-[#111111] border border-outline-variant/30 gold-border-glow transition-all duration-500 h-[400px] flex flex-col justify-end p-8" style="transition-delay: 0ms;">
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGUsTdXM7B2L6xdQ7jstTPtxTh0q3TlB7ZMF8hO41ipzQPwMzkzN3LgUR00SzCFgvm3FlRsDFfc7IJFDFO0j-oO3yxzDOt1gdvqB7oxdVZyURkieBYtowtxCqPWYc8Gp5vliuEKZuJQKUHih2Jj3OQrqvXCanWvumwah3mmysvGDSBIh9j2Vhma0nM6cNGq9T9pegByYvznhToLLku0QURxd3QT2Ftx8ioU2Mc6RPX14huDyE89vJe75DG6gguR3gwFQME_I7C1NU'); background-size: cover; background-position: center;"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
-                    <div class="relative z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <h3 class="font-headline-md text-headline-md text-primary mb-2">CIVIL CONSTRUCTION</h3>
-                        <p class="font-body-md text-body-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Foundational excellence built to endure.</p>
-                    </div>
-                </div>
-                <div class="fade-in-up group relative overflow-hidden bg-[#111111] border border-outline-variant/30 gold-border-glow transition-all duration-500 h-[400px] flex flex-col justify-end p-8" style="transition-delay: 100ms;">
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBzOi4zaDUIMVRbHTWxtOsbjBDyMoQ6coEoOD0gxEFZwgstn5Q_ff-Do4JToXQUKEHNewkhTZvMG7Iauxn9Y1XGGSfQprxp33Flcijkfmnn50WRjzKJBtdNFhPKXYKJQ4qYKLYpAgZvmgCvBov8JQk3CFTMPDIgreVSQ-LhHUbD9Bpe7euIeG4GutFFJ-9erdinTH--FnJwDpDrHcHtS_v4UrNgyAw5GINlYyDZ_Kh4tgqJCNsLYGL671N2myc1bwR3fBsIA8ipYGw'); background-size: cover; background-position: center;"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
-                    <div class="relative z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <h3 class="font-headline-md text-headline-md text-primary mb-2">INTERIOR DESIGN</h3>
-                        <p class="font-body-md text-body-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Curated spaces defining modern luxury.</p>
-                    </div>
-                </div>
-                <div class="fade-in-up group relative overflow-hidden bg-[#111111] border border-outline-variant/30 gold-border-glow transition-all duration-500 h-[400px] flex flex-col justify-end p-8 md:col-span-2" style="transition-delay: 200ms;">
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_HHebA77N3BRQW5FqclLKL4tsY0uwcnFAcFeEy-5RGkTxrr2rBl0DmN0bCUGUxKK3si2vBtRDh799xIULcbPNT21pUNsQus4QKORCDOSHKjwTTdMPUAPH5KMKyDjnX7oD4h7KOtnG2B-k3LtolRDyfuUPsTKpqRqSqeks19Hkbx503FLbXv4vo9wCB1gZarr4JRBMck0FXSqGrQxJWJuiTEE7UHHLXh0ItwLYR-A4u3FuebqMZsuHIlbI7MF5guHGWM3piDuyeEc'); background-size: cover; background-position: center;"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
-                    <div class="relative z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <h3 class="font-headline-md text-headline-md text-primary mb-2">COMPLETE FIT-OUT</h3>
-                        <p class="font-body-md text-body-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Including FF and MEP for Restaurants, Cafés, Hotels, Residential and Offices.</p>
-                    </div>
-                </div>
-                <div class="fade-in-up group relative overflow-hidden bg-[#111111] border border-outline-variant/30 gold-border-glow transition-all duration-500 h-[400px] flex flex-col justify-end p-8 md:col-span-2" style="transition-delay: 300ms;">
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwwimN_-foNH7MF4g3sVJXe_MP2yd4GHiwbfivrTN0y4q2kz8ZgOSjWabZbNHciKMMs75rDsTGS37cqxGsYpD-zMMQ8_6arKh5tRPywr7B0F6eq5R1mlYBU3MuRBpkCHWKeIJS2pyzbhGXQNT2TT_oB11E1Mo33kk4RjW5lkMRFQq3UmVmSyJULxN1wCTp0BmMJiRL0skh5ZE_dUyZPV1G_2WHwQZmcyr5vautXcNdQ2rp-9taUjAUggu45ChYMWq0eqA8fsA-eyI'); background-size: cover; background-position: center;"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
-                    <div class="relative z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <h3 class="font-headline-md text-headline-md text-primary mb-2">SCHEMATIC DRAWINGS</h3>
-                        <p class="font-body-md text-body-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">2D and 3D Perspective planning.</p>
-                    </div>
-                </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="material-symbols-outlined text-gold mt-1 shrink-0" aria-hidden="true">check_circle</span>
+            <div>
+              <h3 class="font-display text-headline-sm text-ink mb-1">One contract, structure to finishes</h3>
+              <p class="text-body-md text-ink-muted">Civil, MEP, joinery and fit-out are all in-house, so there is no gap between trades to argue over when a date slips.</p>
             </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="material-symbols-outlined text-gold mt-1 shrink-0" aria-hidden="true">check_circle</span>
+            <div>
+              <h3 class="font-display text-headline-sm text-ink mb-1">Fast-track retail rollouts</h3>
+              <p class="text-body-md text-ink-muted">Five F&amp;B and retail brands rolled out across malls and towers, on the short programmes mall handovers demand.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="material-symbols-outlined text-gold mt-1 shrink-0" aria-hidden="true">check_circle</span>
+            <div>
+              <h3 class="font-display text-headline-sm text-ink mb-1">Finish quality that survives inspection</h3>
+              <p class="text-body-md text-ink-muted">Corian tops, bespoke vanity units and gypsum works for Marassi Shores and premium villa complexes — measured, not approximated.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== MISSION & VISION
+       The copy here was previously boilerplate from a joinery manufacturer
+       ("the latest automated machinery, thus reducing labour costs", "large
+       volume production run joinery"), and the vision statement was
+       near-verbatim Bechtel's. Both are now the company's own words, taken
+       from its printed brochure (mirrored at images/about-craft.webp), lightly
+       edited only for grammar. -->
+  <section class="relative py-section-gap px-margin-mobile md:px-margin-desktop bg-obsidian overflow-hidden">
+    <img src="images/home-craftsmanship.webp" alt="" aria-hidden="true" width="512" height="512" loading="lazy"
+         class="absolute inset-0 w-full h-full object-cover opacity-10 parallax" data-parallax="0.05"/>
+    <div class="relative z-10 max-w-container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-gutter lg:gap-20">
+      <div class="card p-10 md:p-12 reveal">
+        <span class="eyebrow">Our mission</span>
+        <h2 class="font-display text-headline-md text-ink mt-4 mb-8">Solutions that work, delivered on time</h2>
+        <div class="space-y-6">
+          <p class="text-body-lg text-ink-muted">
+            Our mission is to understand our clients' cultural, functional, operational and
+            commercial needs, drawing on our experience to facilitate solutions that work.
+          </p>
+          <p class="text-body-md text-ink-muted">
+            We strive to create the best solutions for our clients' projects and to ensure high
+            quality, timely project execution. We believe quality and timing are critical to the
+            success of our business.
+          </p>
+          <p class="text-body-md text-ink-muted">
+            We are dedicated to satisfying every customer through a solid network of suppliers and
+            field workers. Professionalism at all levels ensures that planning and preparation give
+            the customer top quality results.
+          </p>
         </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="w-full px-margin-mobile md:px-margin-desktop py-[120px] flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-gutter bg-black border-t border-outline-variant/30 relative z-10">
-        <div class="font-headline-md text-headline-md text-primary tracking-widest text-center md:text-left mb-8 md:mb-0">
-            GOLDEN PEARL
-        </div>
-        <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-            <a class="text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-300" href="#">PRIVACY POLICY</a>
-            <a class="text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-300" href="#">TERMS OF SERVICE</a>
-            <a class="text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-300" href="#">INVESTOR RELATIONS</a>
-        </div>
-        <div class="text-white font-body-md text-body-md text-center md:text-right mt-8 md:mt-0">
-            © 2024 GOLDEN PEARL. ARCHITECTURAL PRECISION &amp; UNCOMPROMISING LUXURY.
-        </div>
-    </footer>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Intersection Observer for fade-in elements
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
+      </div>
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
+      <div class="card p-10 md:p-12 reveal flex flex-col justify-center">
+        <span class="eyebrow">Our capability</span>
+        <h2 class="font-display text-headline-md text-ink mt-4 mb-6">Turnkey, from first contact to handing over the keys</h2>
+        <p class="text-body-lg text-ink-muted mb-6">
+          Golden Pearl is well placed to offer speedy execution in Civil works and Interior
+          decoration, with a large workforce of Civil, Interior and MEP workers.
+        </p>
+        <p class="text-body-md text-ink-muted mb-6">
+          We have built and strengthened in-house capability to supervise and execute large turnkey
+          jobs covering the entire scope of interior works &mdash; partitions, panelling, false
+          ceilings, furniture, and all interior-related civil, MEP and finishing works.
+        </p>
+        <p class="text-body-md text-ink-subtle">
+          Every client gets a full-time dedicated team, and an end-to-end process that manages the
+          project from the first point of contact through to handing over the keys.
+        </p>
+      </div>
+    </div>
+  </section>
 
-            document.querySelectorAll('.fade-in-up').forEach((element) => {
-                observer.observe(element);
-            });
+  <!-- ========================================================== CTA -->
+  <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface border-t border-line">
+    <div class="max-w-container mx-auto text-center">
+      <h2 class="font-display text-headline-lg text-ink mb-5 reveal">Have drawings, a site, or a deadline?</h2>
+      <p class="text-body-lg text-ink-muted max-w-2xl mx-auto mb-10 reveal">
+        Send us the scope and we will come back with a considered price and a programme —
+        or tell you plainly if we are not the right contractor for it.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
+        <a class="btn shimmer" href="contact.html">Request a Quote</a>
+        <!-- TODO(contact): replace with the real number, then update every page. -->
+        <a class="btn-ghost" href="mailto:info@goldenpearlbh.com">
+          <span class="material-symbols-outlined text-lg" aria-hidden="true">mail</span> info@goldenpearlbh.com
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
 
-            // Scroll Effects
-            const nav = document.getElementById('main-nav');
-            const heroBg = document.getElementById('hero-bg');
-            const scrollySection = document.getElementById('scrolly-content');
-            const scrollyBg = document.getElementById('scrolly-bg');
-            const scrollyOverlay = document.getElementById('scrolly-overlay');
-            const scrollyStickyImg = document.getElementById('scrolly-sticky-img');
+<!-- ========================================================= FOOTER
+     SYNCHRONIZED BLOCK — identical on every page.
+     TODO(contact): the phone, email and address below are placeholders.
+     Search the repo for TODO(contact) to find every occurrence.
+     ========================================================= -->
+<footer class="bg-obsidian border-t border-line px-margin-mobile md:px-margin-desktop pt-20 pb-10">
+  <div class="max-w-container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-gutter">
+    <div>
+      <img src="images/logo-lockup.webp" alt="Golden Pearl — Building value" width="320" height="275" loading="lazy" decoding="async" class="h-24 w-auto mb-5"/>
+      <p class="text-body-md text-ink-muted max-w-xs">
+        Golden Pearl Trading &amp; Contracting Co. WLL. Civil construction, industrial maintenance,
+        MEP and interior fit-out across the Kingdom of Bahrain since 2016.
+      </p>
+    </div>
 
-            window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-                
-                // Nav blur effect
-                if (scrollY > 50) {
-                    nav.classList.add('nav-scrolled');
-                } else {
-                    nav.classList.remove('nav-scrolled');
-                }
+    <div>
+      <h2 class="text-label-caps text-ink mb-5">Services</h2>
+      <ul class="space-y-3 text-body-md">
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="services.html#civil">Civil &amp; Industrial</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="services.html#mep">MEP &amp; Fire Systems</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="services.html#fitout">Interior Fit-Out</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="services.html#joinery">Joinery &amp; Millwork</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="services.html#landscaping">Landscaping</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="services.html#design">Design &amp; Drawings</a></li>
+      </ul>
+    </div>
 
-                // Hero Parallax Zoom
-                const winHeight = window.innerHeight;
-                if (scrollY <= winHeight) {
-                    const zoom = 1 + (scrollY / winHeight) * 0.15;
-                    const yPos = (scrollY * 0.3) + 'px';
-                    heroBg.style.transform = `scale(${zoom}) translateY(${yPos})`;
-                }
+    <div>
+      <h2 class="text-label-caps text-ink mb-5">Company</h2>
+      <ul class="space-y-3 text-body-md">
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="portfolio.html">Portfolio</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="about.html">About Us</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="contact.html">Contact</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="privacy.html">Privacy Policy</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
 
-                // Scrollytelling logic
-                if (scrollySection) {
-                    const rect = scrollySection.getBoundingClientRect();
-                    const sectionTop = rect.top;
-                    const sectionBottom = rect.bottom;
-                    
-                    // Check if section is visible in viewport
-                    if (sectionTop < winHeight && sectionBottom > 0) {
-                        // Fade in fixed background
-                        scrollyBg.style.opacity = '1';
-                        scrollyOverlay.style.opacity = '1';
-                        
-                        // Hide sticky image in lg screens when full scrolly bg takes over
-                        if(window.innerWidth >= 1024) {
-                             scrollyStickyImg.style.opacity = '0';
-                        }
-                    } else {
-                        scrollyBg.style.opacity = '0';
-                        scrollyOverlay.style.opacity = '0';
-                        
-                        if(window.innerWidth >= 1024) {
-                             scrollyStickyImg.style.opacity = '1';
-                        }
-                    }
-                }
-            });
-            
-            // Initial check for scroll position
-            window.dispatchEvent(new Event('scroll'));
-        });
-    </script>
-    <script src="inquiry-modal.js"></script>
+    <div id="contact-details">
+      <h2 class="text-label-caps text-ink mb-5">Contact</h2>
+      <ul class="space-y-4 text-body-md">
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-gold text-xl shrink-0" aria-hidden="true">mail</span>
+          <a class="text-ink-muted hover:text-gold transition-colors break-all" href="mailto:info@goldenpearlbh.com">info@goldenpearlbh.com</a>
+        </li>
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-gold text-xl shrink-0" aria-hidden="true">call</span>
+          <!-- TODO(phone): the company brochure prints "+973 693915" — six
+               digits, which is not a valid eight-digit Bahraini number. Shown
+               exactly as printed and deliberately NOT a tel: link, so nobody
+               is dialled by mistake. Replace with the full number. -->
+          <span class="text-ink-muted">+973 693915</span>
+        </li>
+        <li class="text-ink-muted">Flat 2, Bldg 137, Road 3402,<br/>Block 634, Ma&rsquo;amer,<br/>Kingdom of Bahrain</li>
+        <li class="text-ink-subtle text-body-sm">Sun&ndash;Thu, 8:00&ndash;17:00 (AST)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="max-w-container mx-auto mt-16 pt-8 border-t border-line flex flex-col sm:flex-row justify-between gap-4 text-body-sm text-ink-subtle">
+    <p>&copy; <span data-year>2026</span> Golden Pearl Trading &amp; Contracting. All rights reserved.</p>
+    <p>CR No. <span class="text-ink-muted">TODO(contact)</span> &middot; Kingdom of Bahrain</p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script src="inquiry-modal.js"></script>
 </body>
 </html>
