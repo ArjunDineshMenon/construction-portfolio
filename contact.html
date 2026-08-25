@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;icon_names=call,chat,close,mail,menu,location_on,schedule" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;icon_names=call,chat,close,download,location_on,mail,menu,schedule" rel="stylesheet"/>
 
 <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 <script src="assets/tailwind-config.js"></script>
@@ -134,6 +134,19 @@
           <p class="text-body-md text-ink-muted">Sunday&ndash;Thursday<br/>8:00&ndash;17:00 (AST)</p>
           <p class="text-body-sm text-ink-subtle mt-2">CR No. TODO(contact)</p>
         </div>
+      </div>
+
+      <!-- Company profile download — for anyone weighing us up before writing -->
+      <div class="mt-gutter reveal">
+        <a href="assets/golden-pearl-company-profile.pdf" download
+           class="group card card-lift flex flex-col sm:flex-row sm:items-center gap-6 p-8 bg-surface-2 border-gold-dark">
+          <span class="material-symbols-outlined text-gold text-4xl shrink-0" aria-hidden="true">download</span>
+          <div class="flex-1">
+            <h2 class="font-display text-headline-sm text-ink mb-1 group-hover:text-gold transition-colors">Prefer to read first?</h2>
+            <p class="text-body-md text-ink-muted">Download our full company profile &mdash; credentials, services and completed works.</p>
+          </div>
+          <span class="text-body-sm text-ink-subtle whitespace-nowrap">PDF &middot; 16 pages &middot; 2.7&nbsp;MB</span>
+        </a>
       </div>
     </div>
   </section>
@@ -268,6 +281,7 @@
         <li><a class="text-ink-muted hover:text-gold transition-colors" href="portfolio.html">Portfolio</a></li>
         <li><a class="text-ink-muted hover:text-gold transition-colors" href="about.html">About Us</a></li>
         <li><a class="text-ink-muted hover:text-gold transition-colors" href="contact.html">Contact</a></li>
+        <li><a class="text-ink-muted hover:text-gold transition-colors" href="assets/golden-pearl-company-profile.pdf" download>Company Profile (PDF)</a></li>
         <li><a class="text-ink-muted hover:text-gold transition-colors" href="privacy.html">Privacy Policy</a></li>
         <li><a class="text-ink-muted hover:text-gold transition-colors" href="terms.html">Terms of Service</a></li>
       </ul>

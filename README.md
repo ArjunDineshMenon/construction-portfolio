@@ -59,7 +59,8 @@ The previous version was a Google Stitch export and carried several errors:
 - The brand gold was two different values (`#d4af37` and `#f2ca50`) depending on which page you
   were on, because the Tailwind config was copy-pasted into all four files and had drifted.
 - ~20 dead `href="#"` links and 4 buttons with no handler, including "Download Portfolio", for which
-  no PDF existed.
+  no PDF existed. The profile PDF now exists and is wired up — see
+  [Company profile PDF](#company-profile-pdf).
 
 ### Outstanding TODOs
 
@@ -97,6 +98,8 @@ assets/
   tailwind-config.js   Design tokens. SINGLE SOURCE OF TRUTH.
   styles.css           Component layer + animations + reduced-motion rules
   site.js              Nav, mobile drawer, reveals, parallax, project filter
+  golden-pearl-company-profile.pdf
+                       Client-facing company profile, 16 pp (see below)
 
 inquiry-modal.js    Enquiry capture for both the modal and the contact-page form
 tools/
@@ -214,6 +217,62 @@ disclaimers once real photography replaces the renders** — and replacing them 
 Note that ten of the mirrored files are capped at 512×512 by the upstream source. `portfolio-hero`
 and `about-hero` are therefore used as soft, low-opacity, slightly blurred textures behind type
 rather than as sharp full-bleed photographs.
+
+---
+
+## Company profile PDF
+
+`assets/golden-pearl-company-profile.pdf` is the download behind every "Company Profile" link
+(footer on all seven pages, plus the home CTA, the `#company-profile` band on `portfolio.html`,
+the prequalification card on `about.html`, and the banner on `contact.html`). This is what closed
+the old dead "Download Portfolio" button.
+
+It is derived from the print master `GP Profile V5 2024 single page with bleed.pdf` in the repo
+root, which is **not** the file to link: it is 18.7 MB, and its pages carry printer's crop marks
+and 21 pt of bleed on every edge.
+
+Regenerating it is a three-step pipeline, and the order matters:
+
+```bash
+SRC="GP Profile V5 2024 single page with bleed.pdf"
+
+# 1. Repair. The master has a broken xref ("Dereference of free object 530 ... failed").
+pdftocairo -pdf "$SRC" /tmp/repaired.pdf
+
+# 2. Downsample to 150 dpi (18.7 MB -> 2.7 MB).
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/ebook \
+   -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages=true \
+   -sOutputFile=/tmp/small.pdf /tmp/repaired.pdf
+
+# 3. Hide the crop marks by cropping to the master's TrimBox.
+gs -q -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dBATCH \
+   -o assets/golden-pearl-company-profile.pdf \
+   -c "[/CropBox [21 21 616.276 729.661] /PAGES pdfmark" -f /tmp/small.pdf
+```
+
+**Do not skip step 1.** Running Ghostscript directly on the master *silently drops text*: three of
+the four activity bullets on page 5 ("Sports and leisure", "Landscaping", "Mechanical, electrical,
+plumbing") disappear, and nothing in the output warns you. Repairing with `pdftocairo` first fixes
+the xref so Ghostscript keeps every object.
+
+So always verify the result page by page rather than eyeballing the cover:
+
+```bash
+for p in $(seq 1 16); do
+  a=$(pdftotext -f $p -l $p "$SRC" - | wc -w)
+  b=$(pdftotext -f $p -l $p assets/golden-pearl-company-profile.pdf - | wc -w)
+  [ "$a" = "$b" ] || echo "page $p: $a -> $b MISMATCH"
+done
+```
+
+All 16 pages and all 2,068 words are intact in the committed file.
+
+Two gotchas when checking it by eye:
+
+- `pdftoppm` renders the **MediaBox** by default, so it still shows the crop marks. Pass
+  `-cropbox` to see what a browser or Acrobat actually displays.
+- `images/profile-cover.webp` (the cover thumbnail in the `portfolio.html` band) must therefore be
+  generated from a `-cropbox` render, or it will have crop marks baked into it.
 
 ---
 

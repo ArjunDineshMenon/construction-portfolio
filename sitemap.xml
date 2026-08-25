@@ -35,4 +35,9 @@
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+  <url>
+    <loc>https://arjundineshmenon.github.io/construction-portfolio/assets/golden-pearl-company-profile.pdf</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
